@@ -101,3 +101,9 @@
 .container form .submit-btn:hover{
   background: #272c29;
 }
+body{
+  background-image: url('/asserts/images/bgimage.png');
+  height: 100vh; 
+  background-size: cover;
+  background-position: center; 
+};

@@ -28,7 +28,7 @@ class Home extends React.Component{
             </div>
 
             <div >
-                <div><img src="cash.png" alt="Cash Icon" width="320" height="120" /></div>
+                <div><img src="/asserts/images/cash.png" alt="Cash Icon" width="320" height="120" /></div>
                 <div><input type="submit" value="Cash" class="submit" /> </div>
             </div>
 
@@ -40,7 +40,7 @@ class Home extends React.Component{
 
             <div class="inputBox">
                 <span>cards accepted :</span>
-                <img src="card_img.png" alt="" />
+                <img src="/asserts/images/card_img.png" alt="" />
             </div>
             <div class="inputBox">
                 <span>name on card :</span>
