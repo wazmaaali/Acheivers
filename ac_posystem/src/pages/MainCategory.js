@@ -1,155 +1,187 @@
-import React from "react"
-import "../assets/css/fontawesome.min.css" 
-import "../assets/css/default.css" 
-import "../assets/css/style.css" 
-import "../assets/css/responsive.css" 
-import image1 from "../assets/images/product-1.png"
-import image2 from "../assets/images/product-2.png"
-import image3 from "../assets/images/product-3.png"
-import image4 from "../assets/images/product-4.png"
-import image5 from "../assets/images/product-5.png"
-import image6 from "../assets/images/product-6.png"
-import image7 from "../assets/images/product-7.png"
-import image8 from "../assets/images/product-8.png"
-import image9 from "../assets/images/product-9.png"
+import React from "react";
+import "../assets/css/fontawesome.min.css";
+import "../assets/css/default.css";
+import "../assets/css/style.css";
+import "../assets/css/responsive.css";
+import image1 from "../assets/images/product-1.png";
+import image2 from "../assets/images/product-2.png";
+import image3 from "../assets/images/product-3.png";
+import image4 from "../assets/images/product-4.png";
+import image5 from "../assets/images/product-5.png";
+import image6 from "../assets/images/product-6.png";
+import image7 from "../assets/images/product-7.png";
+import image8 from "../assets/images/product-8.png";
+import image9 from "../assets/images/product-9.png";
+import axios from "axios";
+import { useState } from "react";
+import { useEffect } from "react";
 
-function MainCategory() {
-    return(
-<div>
+const MainCategory = () => {
+  // const [sb_c, setSubCategories] = useState([]);
 
-        <section class="header">
-        <a  class="logo">
-          <i class="fas fa-shopping-bag icon"></i>
-          <h1 class="logoTitle">Achievers Grocery</h1>
+  useEffect(() => {
+    const fetchSubCategories = async () => {
+      try {
+        const res = await axios.get("http://localhost:8803/sub_categories");
+        // setSubCategories(res.data);
+        document.getElementById("h1").innerHTML = res.data[0].sc_name;
+        document.getElementById("h2").innerHTML = res.data[1].sc_name;
+        document.getElementById("h3").innerHTML = res.data[2].sc_name;
+        document.getElementById("h4").innerHTML = res.data[3].sc_name;
+        document.getElementById("h5").innerHTML = res.data[4].sc_name;
+        // document.getElementById("h6").innerHTML = res.data[5].sc_name;
+
+        document.getElementById("p1").innerHTML = res.data[0].sc_price;
+        document.getElementById("p2").innerHTML = res.data[1].sc_price;
+        document.getElementById("p3").innerHTML = res.data[2].sc_price;
+        document.getElementById("p4").innerHTML = res.data[3].sc_price;
+        document.getElementById("p5").innerHTML = res.data[4].sc_price;
+        // document.getElementById("p6").innerHTML = res.data[5].sc_price;
+
+        console.log("99999 data: ", res.data[0].sc_price);
+      } catch (err) {
+        console.log("99999 Error: ", err);
+      }
+    };
+    fetchSubCategories();
+  }, []);
+
+  return (
+    <div>
+      <section className="header">
+        <a className="logo">
+          <i className="fas fa-shopping-bag icon"></i>
+          <h1 className="logoTitle">Achievers Grocery</h1>
         </a>
-  
-        <form action="" class="searchForm">
+
+        <form action="" className="searchForm">
           <input
             type="search"
             name="search"
             id="search"
-            class="searchBox"
+            className="searchBox"
             placeholder="Search here..."
           />
-          <label for="search" class="searchPointer"
-            ><i class="fas fa-search icon"></i
-          ></label>
+          <label for="search" className="searchPointer">
+            <i className="fas fa-search icon"></i>
+          </label>
         </form>
-        <div class="mobileMenuHandler">
-          <i class="fas fa-bars icon"></i>
+        <div className="mobileMenuHandler">
+          <i className="fas fa-bars icon"></i>
         </div>
       </section>
-    
-      <section class="navbar" id="navbar">
-        
-        <div class="iconContainer">
-          <a  class="iconLink" title="Shopping Cart">
-            <i class="fa fas fa-shopping-cart icon"></i>
+
+      <section className="navbar" id="navbar">
+        <div className="iconContainer">
+          <a className="iconLink" title="Shopping Cart">
+            <i className="fa fas fa-shopping-cart icon"></i>
           </a>
-         
         </div>
       </section>
 
-      <section id="product" class="product">
-          <h2 class="sectionTitle"> Vegetables</h2>
-          <div class="container">
-            <div class="box">
-              <h3 class="discount">-17.5%</h3>
-              <figure class="figure">
-              <img src={image4} alt="banner" class="img" />
+      <section id="product" className="product">
+        <h2 className="sectionTitle"> Vegetables</h2>
+        <div className="container">
+          <div className="box">
+            <h3 className="discount">-17.5%</h3>
+            <figure className="figure">
+              <img src={image4} alt="banner" className="img" />
+            </figure>
+            <h2 id="h1" className="title"></h2>
 
-              </figure>
-              <h2 class="title">Natural Milk</h2>
-              
-              <div class="price">
-                <span class="present">$10.5</span
-                ><span class="previous">$15.3</span>
-              </div>
-    
-              <button type="button" class="btn">Add To Cart</button>
-  
+            <div className="price">
+              <span id="p1" className="present"></span>
+              <span className="previous">$15.3</span>
             </div>
-           
-            <div class="box">
-              <h3 class="discount">-17.5%</h3>
-              <figure class="figure">
-                 <img src={image1} alt="banner" class="img" />
-              </figure>
-              <h2 class="title">Grapes</h2>
-              <div class="price">
-                <span class="present">$10.5</span
-                ><span class="previous">$15.3</span>
-              </div>
-    
-              <button type="button" class="btn">Add To Cart</button>
-            </div>
-           
-            <div class="box">
-              <h3 class="discount">-18.5%</h3>
-              <figure class="figure">
-              <img src={image2} alt="banner" class="img" />
 
-              </figure>
-              <h2 class="title">Organic Nut</h2>
-              <div class="price">
-                <span class="present">$10.5</span
-                ><span class="previous">$15.3</span>
-              </div>
-    
-              <button type="button" class="btn">Add To Cart</button>
-            </div>
-          
-            <div class="box">
-              <h3 class="discount">-13.5%</h3>
-              <figure class="figure">
-              <img src={image3} alt="banner" class="img" />
-
-              </figure>
-              <h2 class="title">Apple</h2>
-              <div class="price">
-                <span class="present">$10.5</span
-                ><span class="previous">$15.3</span>
-              </div>
-    
-              <button type="button" class="btn">Add To Cart</button>
-            </div>
-            
-            <div class="box">
-              <h3 class="discount">-10.5%</h3>
-              <figure class="figure">
-              <img src={image4} alt="banner" class="img" />
-
-              </figure>
-              <h2 class="title">Tomato</h2>
-              <div class="price">
-                <span class="present">$10.5</span
-                ><span class="previous">$15.3</span>
-              </div>
-    
-              <button type="button" class="btn">Add To Cart</button>
-            </div>
-           
-            <div class="box">
-              <h3 class="discount">-30.5%</h3>
-              <figure class="figure">
-              <img src={image5} alt="banner" class="img" />
-
-              </figure>
-              <h2 class="title">Carrot</h2>
-              <div class="price">
-                <span class="present">$10.5</span
-                ><span class="previous">$15.3</span>
-              </div>
-    
-              <button type="button" class="btn">Add To Cart</button>
-            </div>
-           
+            <button type="button" className="btn">
+              Add To Cart
+            </button>
           </div>
-          
-        </section>
-        </div>
-    )
 
-}
+          <div className="box">
+            <h3 className="discount">-17.5%</h3>
+            <figure className="figure">
+              <img src={image1} alt="banner" className="img" />
+            </figure>
+            <h2 id="h2" className="title"></h2>
+            <div className="price">
+              <span id="p2" className="present"></span>
+              <span className="previous">$15.3</span>
+            </div>
+
+            <button type="button" className="btn">
+              Add To Cart
+            </button>
+          </div>
+
+          <div className="box">
+            <h3 className="discount">-18.5%</h3>
+            <figure className="figure">
+              <img src={image2} alt="banner" className="img" />
+            </figure>
+            <h2 id="h3" className="title"></h2>
+            <div className="price">
+              <span id="p3" className="present"></span>
+              <span className="previous">$15.3</span>
+            </div>
+
+            <button type="button" className="btn">
+              Add To Cart
+            </button>
+          </div>
+
+          <div className="box">
+            <h3 className="discount">-13.5%</h3>
+            <figure className="figure">
+              <img src={image3} alt="banner" className="img" />
+            </figure>
+            <h2 className="title">Apple</h2>
+            <div className="price">
+              <span id="p4" className="present"></span>
+              <span className="previous">$15.3</span>
+            </div>
+
+            <button type="button" className="btn">
+              Add To Cart
+            </button>
+          </div>
+
+          <div className="box">
+            <h3 className="discount">-10.5%</h3>
+            <figure className="figure">
+              <img src={image4} alt="banner" className="img" />
+            </figure>
+            <h2 id="h4" className="title"></h2>
+            <div className="price">
+              <span id="p5" className="present"></span>
+              <span className="previous">$15.3</span>
+            </div>
+
+            <button type="button" className="btn">
+              Add To Cart
+            </button>
+          </div>
+
+          <div className="box">
+            <h3 className="discount">-30.5%</h3>
+            <figure className="figure">
+              <img src={image5} alt="banner" className="img" />
+            </figure>
+            <h2 id="h5" className="title"></h2>
+            <div className="price">
+              <span id="p6" className="present"></span>
+              <span className="previous">$15.3</span>
+            </div>
+
+            <button type="button" className="btn">
+              Add To Cart
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
 
 export default MainCategory;

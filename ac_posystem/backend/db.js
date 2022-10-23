@@ -29,6 +29,23 @@ app.get("/categories", (req, res) => {
     }
   });
 });
+
+app.get("/sub_categories", (req, res) => {
+  const sb_c = "SELECT * FROM achievers_schema.sub_categories";
+  pool.query(sb_c, (err, data) => {
+    if (err) {
+      console.log("Error: ", err);
+      return res.json(err);
+    } else {
+      // console.log("Data: ", data);
+      // const obj = Object.entries(data);
+      // obj.forEach(([key, value]) => console.log(key, value));
+
+      return res.json(data);
+    }
+  });
+});
+
 app.get("/", (req, res) => {
   res.json("Hello backend");
 });
