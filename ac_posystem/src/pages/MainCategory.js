@@ -3,7 +3,7 @@ import "../assets/css/fontawesome.min.css";
 import "../assets/css/default.css";
 import "../assets/css/style.css";
 import "../assets/css/responsive.css";
-import image1 from "../assets/images/product-1.png";
+import image1 from "../assets/images/milk.png";
 import image2 from "../assets/images/product-2.png";
 import image3 from "../assets/images/product-3.png";
 import image4 from "../assets/images/product-4.png";
@@ -120,7 +120,7 @@ const MainCategory = () => {
             <figure className="figure">
               <img src={image2} alt="banner" className="img" />
             </figure>
-            <h2 id="h3" className="title"></h2>
+            <h2 id="h3" className="title">Tomatos</h2>
             <div className="price">
               <span id="p3" className="present"></span>
               <span className="previous">$15.3</span>
@@ -136,7 +136,7 @@ const MainCategory = () => {
             <figure className="figure">
               <img src={image3} alt="banner" className="img" />
             </figure>
-            <h2 className="title">Apple</h2>
+            <h2 className="title">Oranges</h2>
             <div className="price">
               <span id="p4" className="present"></span>
               <span className="previous">$15.3</span>
