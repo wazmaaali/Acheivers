@@ -21,7 +21,7 @@
 .container form{
   padding:20px;
   width:700px;
-  background: rgba(13, 3, 77, 0.728);
+  background: rgba(10, 94, 4, 0.728);
   box-shadow: 0 5px 10px rgba(0,0,0,.1);
 }
 
@@ -101,9 +101,44 @@
 .container form .submit-btn:hover{
   background: #272c29;
 }
-body{
+/* body{
   background-image: url('/asserts/images/bgimage.png');
   height: 100vh; 
   background-size: cover;
   background-position: center; 
-};
+}; */
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+  }
+  
+  li {
+	float: left;
+	border-right:1px solid #bbb;
+  }
+  
+  li:last-child {
+	border-right: none;
+  }
+  
+  li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+	background-color: #111;
+  }
+  
+  .active {
+	background-color: #04AA6D;
+  }
+  .back {
+	background-color: #aa3304;
+  }
