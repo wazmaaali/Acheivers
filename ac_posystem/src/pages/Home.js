@@ -91,7 +91,7 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image1} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
+                <Link to="/Payment" className="btn">
                   Shop Now
                 </Link>
               </div>
