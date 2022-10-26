@@ -4,12 +4,15 @@ class Home extends React.Component{
     render(){
         return(
     <div>
-      <ul>
+        
+    {/* <ul>
 	  <li><a class="back" href="#back">Back</a></li>
 	  <li><a class="active" href="#home">Home</a></li>
 	  <li><a href="#contact">Contact</a></li>
 	  <li style="float:right"><a href="#about">About</a></li>
-	</ul> 
+	</ul>  */}
+    <div>
+      
     <div className="container">
     
     <form action="">
@@ -79,10 +82,14 @@ class Home extends React.Component{
 
 </form>
 
-</div> 
 
-        </div>
-        ); 
+  </div>
+</div> 
+</div>
+
+  ); 
+       
+      
     }
 }
 
