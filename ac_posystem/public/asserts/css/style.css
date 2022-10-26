@@ -11,7 +11,7 @@
 
 .container{
   display: flex;
-  justify-content: right;
+  justify-content: center;
   align-items: center;
   padding:25px;
   min-height: 100vh;
@@ -164,3 +164,24 @@ margin-top: 20px;
   grid-column: 2 ;
   grid-row: 1 / 2;
 } */
+body {
+  margin: 40px;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 40% 60%;
+    
+  }
+
+
+
+  .a {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+  .b {
+    grid-column: 2 ;
+    grid-row: 1 / 2;
+  }
