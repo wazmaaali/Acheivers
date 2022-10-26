@@ -8,11 +8,11 @@ jobs:
       - checkout
       - run:
           name: install dependencies
-          command: cd "/Users/saira/Acheivers/ac_posystem/backend/test" && npm install
+          command: cd test && npm install
 
       - run:
           name: run test
-          command: cd "/Users/saira/Acheivers/ac_posystem/backend/test" && npm run test
+          command: cd test && npm run test
 workflows:
   sample:
     jobs:
