@@ -12,7 +12,28 @@ class Home extends React.Component{
 	  <li style="float:right"><a href="#about">About</a></li>
 	</ul>  */}
     <div>
-      
+    <div class="page">
+	 	<div class="shopping-cart dark">
+	 		<div class="container">
+		        <div class="block-heading">
+		          </div>
+			 			<div class="col-md-12 col-lg-4">
+			 				<div class="summary">
+			 					<h3>Summary</h3>
+			 					<div class="summary-item"><span class="text">Subtotal</span><span class="price">$360</span></div>
+			 					<div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
+			 					<div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span></div>
+			 					<div class="summary-item"><span class="text">Total</span><span class="price">$360</span></div>
+			 					<button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button>
+				 			</div>
+			 			</div>
+		 			</div> 
+		 		</div>
+	 		</div>
+		</div>
+	</div>
+        
+     </div>   
     <div className="container">
     
     <form action="">
