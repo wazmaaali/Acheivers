@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 class Payment extends React.Component {
     render() {
@@ -32,7 +33,7 @@ class Payment extends React.Component {
                         <div class=" b">
                             <div className="container">
 
-                                <form action="">
+                                <form action="/ConfiromationPage">
 
                                     <div className="row">
 
@@ -94,7 +95,7 @@ class Payment extends React.Component {
                                         </div>
 
                                     </div>
-
+                                    
                                     <input type="submit" value="proceed to checkout" className="submit-btn" />
 
                                 </form>
