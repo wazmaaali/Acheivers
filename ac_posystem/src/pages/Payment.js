@@ -1,17 +1,9 @@
 import React from 'react'
 
-class Home extends React.Component {
+class Payment extends React.Component {
     render() {
         return (
             <div>
-
-
-                {/* <ul>
-	  <li><a class="back" href="#back">Back</a></li>
-	  <li><a class="active" href="#home">Home</a></li>
-	  <li><a href="#contact">Contact</a></li>
-	  <li style="float:right"><a href="#about">About</a></li>
-	</ul>  */}
                 <div>
 
                     <div class="wrapper">
@@ -26,10 +18,10 @@ class Home extends React.Component {
                                                 <h3>Summary</h3>
                                                 <div class="summary-item"><span class="text">Subtotal</span><span class="price">$360</span>
                                                 </div>
-                                                <div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
-                                                <div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span></div>
-                                                <div class="summary-item"><span class="text">Total</span><span class="price">$360</span></div>
-                                                <button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button>
+                                                <div class="summary-item"><span class="text">Discount</span><span class="price">$10</span></div>
+                                                <div class="summary-item"><span class="text">Shipping</span><span class="price">$5</span></div>
+                                                <div class="summary-item"><span class="text">Total</span><span class="price">$355</span></div>
+                                                <button type="button" class="btn btn-primary btn-lg btn-block">Continue Shopping</button>
                                             </div>
                                         
                                     {/* </div> */}
@@ -62,7 +54,7 @@ class Home extends React.Component {
                                             </div>
 
                                             <div >
-                                                <div><img src="/asserts/images/image3.jpeg" alt="Cash Icon" width="320" height="120" /></div>
+                                                <div><img src="/asserts/images/wallet.jpeg" alt="Cash Icon" width="320" height="120" /></div>
                                                 <div><input type="submit" value="Cash" className="submit" /> </div>
                                             </div>
 
@@ -124,4 +116,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export default Payment;

@@ -1,10 +1,9 @@
-import Home from './pages/home';
-import logo from './logo.svg';
+import Payment from './pages/Payment';
 import './App.css';
 
 function App() {
   return (
-    <Home />
+    <Payment />
   );
 }
 

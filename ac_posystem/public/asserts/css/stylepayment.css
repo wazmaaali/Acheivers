@@ -99,7 +99,7 @@
 }
 
 .container form .submit-btn:hover{
-  background: #272c29;
+  background: #000502;
 }
 /* body{
   background-image: url('/asserts/images/bgimage.png');
@@ -122,7 +122,7 @@ opacity:0.7;
 }
 
 .shopping-cart .summary{
-border-top: 2px solid #5ea4f3;
+border-top: 2px solid #040d18;
   background-color: #f7fbff;
   height: 100%;
   padding: 30px;
