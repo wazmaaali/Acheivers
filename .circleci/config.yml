@@ -8,11 +8,11 @@ jobs:
       - checkout
       - run:
           name: install dependencies
-          command: cd ./backend && npm install
+          command: cd ac_posystem/backend && npm install
 
       - run:
           name: run test
-          command: cd ./backend/test && npm run test
+          command: cd ac_posystem/backend/test && npm run test
 workflows:
   sample:
     jobs:
