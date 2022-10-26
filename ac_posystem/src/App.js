@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import MainCategory from "./pages/MainCategory";
-import MainCategory from "./pages/Payment";
+import Payment from "./pages/Payment";
 
 function App() {
   return (
