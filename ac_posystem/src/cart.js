@@ -1,45 +1,73 @@
-import React, { useState } from 'react';
-import './App.css';
+import React from "react"
+import "../assets/css/fontawesome.min.css" 
+import "../assets/css/default.css" 
+import "../assets/css/style.css" 
+import "../assets/css/responsive.css" 
 
-function App() {
-  const [Products] = useState([
-    {
-      name: 'Banana',
-      price: '$2.99',
-      image: 'https://tse1.mm.bing.net/th?id=OIP.GbmHvz3QvA1Oz2896pbIvQHaFW&pid=Api&P=0',
-    },
-    {
-      name: 'Apple',
-      price: '$2.60',
-      image: 'https://tse2.mm.bing.net/th?id=OIP.R0ResAz3EnSCx9MQzA_-EgHaHI&pid=Api&P=0',
-    },
-    {
-      name: 'Onion',
-      price: '$1.30',
-      image: 'https://tse1.mm.bing.net/th?id=OIP.7IUkXAgs4EMXT65vs2dM1QHaFy&pid=Api&P=0',
-    },
-    {
-      name: 'potato',
-      price: '$1.20',
-      image: 'https://tse2.mm.bing.net/th?id=OIP.F0aQXnmCDGEadfNivihUAQHaF8&pid=Api&P=0',
-    },
-  ]);
+function Cart () {
+    return (
+        <div className="CartContainer">
+   	   <div className="Header">
+   	   	<h3 className="Heading">Shopping Cart</h3>
+   	   	<h5 className="Action">Remove all</h5>
+   	   </div>
 
-  return (
-  <div className="App">
-    <h1>Products</h1>
-    <div className="products">
-    {Products.map((product, idx) => (
-    <div className="product" key={idx}>
-    <h3>{product.name}</h3>
-    <h4>{product.cost}</h4>
-    <img src={product.image} alt={product.name}/>
-    <button>Add to Cart</button>
-    </div>
-    ))}
-    </div>
-    </div>
-  );
+   	   <div className="Cart-Items">
+   	   	  <div className="image-box">
+   	   	  	<img src="asserts/images/lf.png" alt="Cart"
+            style={{ height:"120px" }} />
+   	   	  </div>
+   	   	  <div className="about">
+   	   	  	<h1 className="title">Apple Juice</h1>
+   	   	  	<h3 className="subtitle">250ml</h3>
+   	   	  	<img src="images/veg.png"  alt="Cart"
+            style={{ height:"30px" }} />
+   	   	  </div>
+   	   	  <div className="counter">
+   	   	  	<div className="btn">+</div>
+   	   	  	<div className="count">2</div>
+   	   	  	<div className="btn">-</div>
+   	   	  </div>
+   	   	  <div className="prices">
+   	   	  	<div className="amount">$2.99</div>
+   	   	  	<div className="save"><u>Save for later</u></div>
+   	   	  	<div className="remove"><u>Remove</u></div>
+   	   	  </div>
+   	   </div>
+
+   	   <div className="Cart-Items pad">
+   	   	  <div className="image-box">
+   	   	  	<img src="images/grapes.png"  alt="Cart"
+            style={{ height:"120px" }} />
+   	   	  </div>
+   	   	  <div className="about">
+   	   	  	<h1 className="title">Grapes Juice</h1>
+   	   	  	<h3 className="subtitle">250ml</h3>
+   	   	  	<img src="images/veg.png"   alt="Cart"
+            style={{ height:"30px" }} />
+   	   	  </div>
+   	   	  <div className="counter">
+   	   	  	<div className="btn">+</div>
+   	   	  	<div className="count">1</div>
+   	   	  	<div className="btn">-</div>
+   	   	  </div>
+   	   	  <div className="prices">
+   	   	  	<div className="amount">$3.19</div>
+   	   	  	<div className="save"><u>Save for later</u></div>
+   	   	  	<div className="remove"><u>Remove</u></div>
+   	   	  </div>
+   	   </div>
+   	 
+   	 <div className="checkout">
+   	 <div className="total">
+   	 	<div>
+   	 		<div className="Subtotal">Sub-Total</div>
+   	 		<div className="items">2 items</div>
+   	 	</div>
+   	 	<div className="total-amount">$6.18</div>
+   	 </div>
+   	 <button className="button">Checkout</button></div>
+   </div>
+
+    );
 }
-
-export default App;
