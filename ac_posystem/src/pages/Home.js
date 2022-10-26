@@ -79,21 +79,18 @@ const Home = () => {
         {/* {home.map((home) => ( */}
         <div className="Category">
           <section id="category" className="category">
-            <h2 className="sectionTitle">
-              Shop By <span>Category</span>
+            <h2 className="sectionTitle"> Shop By <span>Category</span>
             </h2>
             <div className="container">
               <div className="box">
                 <div className="content">
-                  <h3 id="h1" className="title"></h3>
+                  <h3 id="h1" className="title">Vegetables</h3>
                   <h4 className="subTitle">Upto 27.5% off</h4>
                 </div>
                 <figure className="figure">
                   <img src={image1} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
-                  Shop Now
-                </Link>
+                <Link to="/MainCategory" className="btn"> Shop Now</Link>
               </div>
               <div className="box">
                 <div className="content">
@@ -121,7 +118,7 @@ const Home = () => {
               </div>
               <div className="box">
                 <div className="content">
-                  <h3 id="h4" className="title"></h3>
+                  <h3 id="h4" className="title">Fruits</h3>
                   <h4 className="subTitle">Upto 40% off</h4>
                 </div>
                 <figure className="figure">

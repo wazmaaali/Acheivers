@@ -80,14 +80,14 @@ const MainCategory = () => {
       </section>
 
       <section id="product" className="product">
-        <h2 className="sectionTitle"> Vegetables</h2>
+        <h2 className="sectionTitle">Fruits</h2>
         <div className="container">
           <div className="box">
             <h3 className="discount">-17.5%</h3>
             <figure className="figure">
               <img src={image4} alt="banner" className="img" />
             </figure>
-            <h2 id="h1" className="title"></h2>
+            <h2 id="h1" className="title">Apples</h2>
 
             <div className="price">
               <span id="p1" className="present"></span>
@@ -104,15 +104,15 @@ const MainCategory = () => {
             <figure className="figure">
               <img src={image1} alt="banner" className="img" />
             </figure>
-            <h2 id="h2" className="title"></h2>
+            <h2 id="h2" className="title">Bananas</h2>
             <div className="price">
               <span id="p2" className="present"></span>
               <span className="previous">$15.3</span>
             </div>
 
-            <button type="button" className="btn">
-              Add To Cart
-            </button>
+     
+
+            
           </div>
 
           <div className="box">
@@ -120,7 +120,7 @@ const MainCategory = () => {
             <figure className="figure">
               <img src={image2} alt="banner" className="img" />
             </figure>
-            <h2 id="h3" className="title">Tomatos</h2>
+            <h2 id="h3" className="title">cherry</h2>
             <div className="price">
               <span id="p3" className="present"></span>
               <span className="previous">$15.3</span>
@@ -152,7 +152,7 @@ const MainCategory = () => {
             <figure className="figure">
               <img src={image4} alt="banner" className="img" />
             </figure>
-            <h2 id="h4" className="title"></h2>
+            <h2 id="h4" className="title">water melon</h2>
             <div className="price">
               <span id="p5" className="present"></span>
               <span className="previous">$15.3</span>
@@ -168,7 +168,7 @@ const MainCategory = () => {
             <figure className="figure">
               <img src={image5} alt="banner" className="img" />
             </figure>
-            <h2 id="h5" className="title"></h2>
+            <h2 id="h5" className="title">Grapes</h2>
             <div className="price">
               <span id="p6" className="present"></span>
               <span className="previous">$15.3</span>
