@@ -7,7 +7,7 @@
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: center;
   background: var(--grey240);
 }
@@ -21,7 +21,7 @@
 
 .header .logo .icon {
   color: var(--green200);
-  font-size: 4rem;
+  font-size: 5rem;
 }
 .header .logo .logoTitle {
   font-size: 2.2rem;
@@ -204,7 +204,7 @@
 .home .container .content .btn {
   background: var(--green150);
   color: var(--white);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .home .container .content .btn:hover {
@@ -269,7 +269,7 @@
   color: var(--green100);
   padding: 3rem 0;
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 .banner .container .box .btn {
   color: var(--white);
@@ -704,7 +704,8 @@
   box-shadow: 0px 1px 2px var(--green100) inset;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap:
+  wrap;
   align-items: center;
   justify-content: space-between;
   font-size: 1.6rem;
@@ -724,7 +725,7 @@
   position: fixed;
   bottom: 3%;
   right: 5%;
-  z-index: 100;
+  z-index: 200;
 }
 .gotoTop.active {
   display: inline-block;

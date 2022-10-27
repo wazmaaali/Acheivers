@@ -94,6 +94,7 @@ const MainCategory = () => {
               <span className="previous">$15.3</span>
             </div>
 
+
             <button type="button" className="btn">
               Add To Cart
             </button>
