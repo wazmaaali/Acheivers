@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import React from 'react';
 
 var dataList = [];
 const Home = () => {
@@ -91,7 +92,7 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image1} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
+                <Link to="/Payment" className="btn">
                   Shop Now
                 </Link>
               </div>
@@ -103,7 +104,7 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image2} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
+                <Link to="/Cart" className="btn">
                   Shop Now
                 </Link>
               </div>
