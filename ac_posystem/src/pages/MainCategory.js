@@ -15,15 +15,20 @@ import image9 from "../assets/images/product-9.png";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import Constants from "./Constants";
+import { useLocation } from "react-router-dom";
 
 const MainCategory = () => {
-  // const [sb_c, setSubCategories] = useState([]);
+  const location = useLocation();
 
+  Constants.c_id = location.state.id;
   useEffect(() => {
     const fetchSubCategories = async () => {
       try {
-        const res = await axios.get("http://localhost:8803/sub_categories");
-        // setSubCategories(res.data);
+        const res = await axios.get(
+          "http://localhost:8803/sub_categories/" + location.state.id
+        );
+
         document.getElementById("h1").innerHTML = res.data[0].sc_name;
         document.getElementById("h2").innerHTML = res.data[1].sc_name;
         document.getElementById("h3").innerHTML = res.data[2].sc_name;
@@ -62,7 +67,7 @@ const MainCategory = () => {
             className="searchBox"
             placeholder="Search here..."
           />
-          <label for="search" className="searchPointer">
+          <label htmlFor="search" className="searchPointer">
             <i className="fas fa-search icon"></i>
           </label>
         </form>
@@ -95,7 +100,10 @@ const MainCategory = () => {
             </div>
 
             <button type="button" className="btn">
-              Add To Cart
+              Add
+            </button>
+            <button type="button" className="btn">
+              Remove
             </button>
           </div>
 

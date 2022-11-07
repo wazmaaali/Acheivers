@@ -13,12 +13,10 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import React from 'react';
+import React from "react";
 
-var dataList = [];
 const Home = () => {
   const [home, setCategories] = useState([]);
-
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -33,8 +31,6 @@ const Home = () => {
         document.getElementById("h6").innerHTML = res.data[2].c_name;
         document.getElementById("h7").innerHTML = res.data[2].c_name;
         document.getElementById("h8").innerHTML = res.data[2].c_name;
-
-        console.log("99999 res: ", dataList[0].c_name);
       } catch (err) {
         console.log("99999 Error: ", err);
       }
@@ -92,8 +88,15 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image1} alt="banner" className="img" />
                 </figure>
-                <Link to="/Payment" className="btn">
-                  Shop Now
+
+                <Link
+                  to="/MainCategory"
+                  state={{
+                    id: "1", // your data array of objects
+                  }}
+                  className="btn"
+                >
+                  Show Now
                 </Link>
               </div>
               <div className="box">
@@ -104,7 +107,13 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image2} alt="banner" className="img" />
                 </figure>
-                <Link to="/Cart" className="btn">
+                <Link
+                  to="/MainCategory"
+                  state={{
+                    id: "2", // your data array of objects
+                  }}
+                  className="btn"
+                >
                   Shop Now
                 </Link>
               </div>
@@ -116,7 +125,13 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image3} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
+                <Link
+                  to="/MainCategory"
+                  state={{
+                    id: "3", // your data array of objects
+                  }}
+                  className="btn"
+                >
                   Shop Now
                 </Link>
               </div>
@@ -128,7 +143,13 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image4} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
+                <Link
+                  to="/MainCategory"
+                  state={{
+                    id: "4", // your data array of objects
+                  }}
+                  className="btn"
+                >
                   Shop Now
                 </Link>
               </div>
@@ -142,7 +163,13 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image4} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
+                <Link
+                  to="/MainCategory"
+                  state={{
+                    id: "5", // your data array of objects
+                  }}
+                  className="btn"
+                >
                   Shop Now
                 </Link>
               </div>
@@ -154,7 +181,13 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image5} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
+                <Link
+                  to="/MainCategory"
+                  state={{
+                    id: "6", // your data array of objects
+                  }}
+                  className="btn"
+                >
                   Shop Now
                 </Link>
               </div>
@@ -166,7 +199,13 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image6} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
+                <Link
+                  to="/MainCategory"
+                  state={{
+                    id: "7", // your data array of objects
+                  }}
+                  className="btn"
+                >
                   Shop Now
                 </Link>
               </div>
@@ -178,7 +217,13 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image7} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
+                <Link
+                  to="/MainCategory"
+                  state={{
+                    id: "8", // your data array of objects
+                  }}
+                  className="btn"
+                >
                   Shop Now
                 </Link>
               </div>
