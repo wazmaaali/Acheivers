@@ -15,6 +15,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import React from "react";
 
+var dataList = [];
 const Home = () => {
   const [home, setCategories] = useState([]);
   useEffect(() => {

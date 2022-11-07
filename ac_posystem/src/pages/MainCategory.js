@@ -15,13 +15,11 @@ import image9 from "../assets/images/product-9.png";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import Constants from "./Constants";
 import { useLocation } from "react-router-dom";
 
 const MainCategory = () => {
   const location = useLocation();
 
-  Constants.c_id = location.state.id;
   useEffect(() => {
     const fetchSubCategories = async () => {
       try {
