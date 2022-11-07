@@ -28,7 +28,7 @@ function Cart () {
    	   	  	<div className="btn">+</div>
    	   	  	<div className="count">2</div>
    	   	  	<div className="btn">-</div>
-   	   	  </div>
+   	   	  </div> 
    	   	  <div className="prices">
    	   	  	<div className="amount">$2.99</div>
    	   	  	<div className="save"><u>Save for later</u></div>
@@ -51,7 +51,7 @@ function Cart () {
    	   	  	<div className="btn">+</div>
    	   	  	<div className="count">1</div>
    	   	  	<div className="btn">-</div>
-   	   	  </div>
+   	   	  </div> 
    	   	  <div className="prices">
    	   	  	<div className="amount">$3.19</div>
    	   	  	<div className="save"><u>Save for later</u></div>
@@ -67,9 +67,7 @@ function Cart () {
    	 	</div>
    	 	<div className="total-amount">$6.18</div>
    	 </div>
-		<Link to="/Payment" className="btn">
-                   Checkout
-                </Link>
+		<Link to="/Payment" className="btn">Checkout</Link>
 
    	 </div>
 	 
