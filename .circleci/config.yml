@@ -8,10 +8,10 @@ jobs:
       - checkout
       - run:
           name: install dependencies
-          command: cd ./backend/test-backend && npm install
+          command: cd ../backend/test-backend && npm install
       - run:
           name: run tests
-          command: cd ./backend/test-backend && npm run test
+          command: cd ../backend/test-backend && npm run test
           
 workflows:
   sample:
