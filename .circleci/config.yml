@@ -9,9 +9,10 @@ jobs:
       - run:
           name: install dependencies
           command: cd test-backend && npm install
-
       - run:
-          name: run test-backend && npm run test
+          name: run tests
+          command: cd test-backend && npm run test
+          
 workflows:
   sample:
     jobs:
