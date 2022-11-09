@@ -1,19 +1,18 @@
 version: 2.1
 
 jobs:
-  build-and-test-javascript:
+  build-and-test-backend:
     docker:
-      - image: cimg/node:14.20.0
+      - image: cimg/node:18.12.0
     steps:
       - checkout
       - run:
           name: install dependencies
-          command: cd "/Users/saira/Acheivers/ac_posystem/backend/test" && npm install
+          command: cd test-backend && npm install
 
       - run:
-          name: run test
-          command: cd "/Users/saira/Acheivers/ac_posystem/backend/test" && npm run test
+          name: run test-backend && npm run test
 workflows:
   sample:
     jobs:
-      - build-and-test-javascript
+      - build-and-test-backend
