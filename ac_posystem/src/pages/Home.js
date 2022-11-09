@@ -27,11 +27,9 @@ const Home = () => {
         document.getElementById("h1").innerHTML = res.data[0].c_name;
         document.getElementById("h2").innerHTML = res.data[1].c_name;
         document.getElementById("h3").innerHTML = res.data[2].c_name;
-        document.getElementById("h4").innerHTML = res.data[2].c_name;
-        document.getElementById("h5").innerHTML = res.data[2].c_name;
-        document.getElementById("h6").innerHTML = res.data[2].c_name;
-        document.getElementById("h7").innerHTML = res.data[2].c_name;
-        document.getElementById("h8").innerHTML = res.data[2].c_name;
+        document.getElementById("h4").innerHTML = res.data[3].c_name;
+        document.getElementById("h5").innerHTML = res.data[4].c_name;
+        document.getElementById("h6").innerHTML = res.data[5].c_name;
       } catch (err) {
         console.log("99999 Error: ", err);
       }
@@ -93,7 +91,7 @@ const Home = () => {
                 <Link
                   to="/MainCategory"
                   state={{
-                    id: "1", // your data array of objects
+                    id: "1",
                   }}
                   className="btn"
                 >
@@ -106,7 +104,7 @@ const Home = () => {
                   <h4 className="subTitle">Upto 50% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image2} alt="banner" className="img" />
+                  <img src={image4} alt="banner" className="img" />
                 </figure>
                 <Link
                   to="/MainCategory"
@@ -136,14 +134,17 @@ const Home = () => {
                   Shop Now
                 </Link>
               </div>
+            </div>
+            <div className="container">
               <div className="box">
                 <div className="content">
                   <h3 id="h4" className="title"></h3>
-                  <h4 className="subTitle">Upto 40% off</h4>
+                  <h4 className="subTitle">Upto 27.5% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image4} alt="banner" className="img" />
+                  <img src={image2} alt="banner" className="img" />
                 </figure>
+
                 <Link
                   to="/MainCategory"
                   state={{
@@ -151,18 +152,16 @@ const Home = () => {
                   }}
                   className="btn"
                 >
-                  Shop Now
+                  Show Now
                 </Link>
               </div>
-            </div>
-            <div className="container">
               <div className="box">
                 <div className="content">
                   <h3 id="h5" className="title"></h3>
-                  <h4 className="subTitle">Upto 27.5% off</h4>
+                  <h4 className="subTitle">Upto 50% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image4} alt="banner" className="img" />
+                  <img src={image5} alt="banner" className="img" />
                 </figure>
                 <Link
                   to="/MainCategory"
@@ -177,10 +176,10 @@ const Home = () => {
               <div className="box">
                 <div className="content">
                   <h3 id="h6" className="title"></h3>
-                  <h4 className="subTitle">Upto 50% off</h4>
+                  <h4 className="subTitle">Upto 35% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image5} alt="banner" className="img" />
+                  <img src={image7} alt="banner" className="img" />
                 </figure>
                 <Link
                   to="/MainCategory"
@@ -192,47 +191,9 @@ const Home = () => {
                   Shop Now
                 </Link>
               </div>
-              <div className="box">
-                <div className="content">
-                  <h3 id="h7" className="title"></h3>
-                  <h4 className="subTitle">Upto 35% off</h4>
-                </div>
-                <figure className="figure">
-                  <img src={image6} alt="banner" className="img" />
-                </figure>
-                <Link
-                  to="/MainCategory"
-                  state={{
-                    id: "7", // your data array of objects
-                  }}
-                  className="btn"
-                >
-                  Shop Now
-                </Link>
-              </div>
-              <div className="box">
-                <div className="content">
-                  <h3 id="h8" className="title"></h3>
-                  <h4 className="subTitle">Upto 40% off</h4>
-                </div>
-                <figure className="figure">
-                  <img src={image7} alt="banner" className="img" />
-                </figure>
-                <Link
-                  to="/MainCategory"
-                  state={{
-                    id: "8", // your data array of objects
-                  }}
-                  className="btn"
-                >
-                  Shop Now
-                </Link>
-              </div>
             </div>
           </section>
         </div>
-        {/* )) */}
-        {/* } */}
       </div>
     </div>
   );

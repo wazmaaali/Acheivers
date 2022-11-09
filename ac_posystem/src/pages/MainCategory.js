@@ -17,9 +17,11 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+var cat = "";
 const MainCategory = () => {
   const location = useLocation();
-
+  cat = location.state.id;
+  console.log("9999 cat: ", cat);
   useEffect(() => {
     const fetchSubCategories = async () => {
       try {
@@ -83,7 +85,7 @@ const MainCategory = () => {
       </section>
 
       <section id="product" className="product">
-        <h2 className="sectionTitle"> Vegetables</h2>
+        <h2 className="sectionTitle"> {cat}</h2>
         <div className="container">
           <div className="box">
             <h3 className="discount">-17.5%</h3>
@@ -99,9 +101,6 @@ const MainCategory = () => {
 
             <button type="button" className="btn">
               Add
-            </button>
-            <button type="button" className="btn">
-              Remove
             </button>
           </div>
 
