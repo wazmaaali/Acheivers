@@ -42,6 +42,7 @@ const Home = () => {
     fetchCategories();
   }, []);
 
+  const newLocal = "iconLink";
   return (
     // <div dangerouslySetInnerHTML={ {__html: htmlContent} } />
     <div className="App">
@@ -70,9 +71,15 @@ const Home = () => {
 
       <section className="navbar" id="navbar">
         <div className="iconContainer">
-          <a className="iconLink" title="Shopping Cart" data-toggle="modal" data-target="shoppingcart">
+
+          <a className={newLocal} title="Shopping Cart">
+            
+            <Link to="/Cart">
             <i className="fa fas fa-shopping-cart icon"></i>
+            </Link>
+            
           </a>
+
         </div>
       </section>
 
@@ -188,25 +195,28 @@ const Home = () => {
         {/* )) */}
         {/* } */}
       </div>
-      <div class="modal fade" id="shoppingcart" tabindex="-1" role="dialog" aria-labelledby="shoppingcart" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="shoppingcart">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+
+      <div class="modal fade" id="shoppingcart" role="dialog" aria-labelledby="shoppingcartLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="shoppingcartLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+
     </div>
   );
 };
