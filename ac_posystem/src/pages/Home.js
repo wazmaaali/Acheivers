@@ -73,13 +73,12 @@ const Home = () => {
         <div className="iconContainer">
 
           <a className={newLocal} title="Shopping Cart">
-            
             <Link to="/Cart">
             <i className="fa fas fa-shopping-cart icon"></i>
             </Link>
             
           </a>
-
+#
         </div>
       </section>
 
