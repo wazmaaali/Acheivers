@@ -20,7 +20,7 @@ function Cart () {
    	   	  </div>
    	   	  <div className="about">
    	   	  	<h1 className="title">Apple Juice</h1>
-   	   	  	<h3 className="subtitle">250ml</h3>
+   	   	  	<h3 className="subtitle">350ml</h3>
    	   	  	<img src="images/veg.png"  alt="Cart"
             style={{ height:"30px" }} />
    	   	  </div>
