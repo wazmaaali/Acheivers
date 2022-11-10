@@ -5,7 +5,7 @@ import { shallow } from "enzyme";
 
 const app = express();
 
-//1
+// //1
 // describe("Get Data for category", () => {
 //   it("respond with valid data", async function (done) {
 //     // Make POST Request
@@ -18,6 +18,7 @@ const app = express();
 //   });
 // });
 //2
+
 describe("If on Category button clicked", () => {
   it("renders without crashing", () => {
     const div = document.createElement("div");
@@ -25,6 +26,7 @@ describe("If on Category button clicked", () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 });
+
 
 //3 Redirection check 1
 describe("If on Category button clicked", () => {
