@@ -13,9 +13,11 @@ class Calculations extends React.Component {
 
         cart.forEach(item => {
             total = total + item.price;
+            ship = total + 13
         });
         console.log(total)
         window.sessionStorage.setItem("total", total);
+        window.sessionStorage.setItem("ship", ship);
         return (
               <p>calculation worked</p>
           );
