@@ -71,7 +71,9 @@ const Home = () => {
       <section className="navbar" id="navbar">
         <div className="iconContainer">
           <a className="iconLink" title="Shopping Cart">
-            <i className="fa fas fa-shopping-cart icon"></i>
+            <i className="fa fas fa-shopping-cart icon">
+            <Link to="/Cart" alt="banner" className="fa fas fa-shopping-cart icon"></Link>
+            </i>
           </a>
         </div>
       </section>
