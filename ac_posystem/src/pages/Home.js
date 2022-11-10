@@ -19,6 +19,16 @@ var dataList = [];
 const Home = () => {
   const [home, setCategories] = useState([]);
 
+  const [count, setCount] = useState(0);
+
+  let incrementCount = () => {
+    setCount(count + 1);
+  };
+
+  let decrementCount = () => {
+    setCount(count - 1);
+  };
+
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -63,19 +73,17 @@ const Home = () => {
             <i className="fas fa-search icon"></i>
           </label>
         </form>
+
         <div className="mobileMenuHandler">
           <i className="fas fa-bars icon"></i>
         </div>
       </section>
 
       <section className="navbar" id="navbar">
-        <div className="iconContainer">
-          <a className="iconLink" title="Shopping Cart">
-            <i className="fa fas fa-shopping-cart icon">
-            <Link to="/Cart" alt="banner" className="fa fas fa-shopping-cart icon"></Link>
-            </i>
-          </a>
-        </div>
+  
+          <div className="iconLink">
+              <Link to ="/Cart" className="iconLink"></Link>
+          </div>
       </section>
 
       <div className="Categories">
@@ -94,9 +102,16 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image1} alt="banner" className="img" />
                 </figure>
-                <Link to="/Payment" className="btn">
-                  Shop Now
-                </Link>
+                <div className="qty-counter">
+                  <Link to="/Payment" className="btn setht">Shop Now</Link>
+                  <div>
+                    <div style={{display: "flex"}}>
+                      <button onClick={decrementCount} className="btn">-</button>
+                      <h1>{count}</h1>
+                      <button onClick={incrementCount} className="btn">+</button>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="box">
                 <div className="content">
@@ -106,9 +121,16 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image2} alt="banner" className="img" />
                 </figure>
-                <Link to="/Cart" className="btn">
-                  Shop Now
-                </Link>
+                <div className="qty-counter">
+                  <Link to="/Payment" className="btn setht">Shop Now</Link>
+                  <div>
+                    <div style={{display: "flex"}}>
+                      <button onClick={decrementCount} className="btn">-</button>
+                      <h1>{count}</h1>
+                      <button onClick={incrementCount} className="btn">+</button>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="box">
                 <div className="content">
@@ -118,9 +140,16 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image3} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
-                  Shop Now
-                </Link>
+                <div className="qty-counter">
+                  <Link to="/Payment" className="btn setht">Shop Now</Link>
+                  <div>
+                    <div style={{display: "flex"}}>
+                      <button onClick={decrementCount} className="btn">-</button>
+                      <h1>{count}</h1>
+                      <button onClick={incrementCount} className="btn">+</button>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="box">
                 <div className="content">
@@ -130,9 +159,16 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image4} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
-                  Shop Now
-                </Link>
+                <div className="qty-counter">
+                  <Link to="/Payment" className="btn setht">Shop Now</Link>
+                  <div>
+                    <div style={{display: "flex"}}>
+                      <button onClick={decrementCount} className="btn">-</button>
+                      <h1>{count}</h1>
+                      <button onClick={incrementCount} className="btn">+</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="container">
@@ -144,9 +180,16 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image4} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
-                  Shop Now
-                </Link>
+                <div className="qty-counter">
+                  <Link to="/Payment" className="btn setht">Shop Now</Link>
+                  <div>
+                    <div style={{display: "flex"}}>
+                      <button onClick={decrementCount} className="btn">-</button>
+                      <h1>{count}</h1>
+                      <button onClick={incrementCount} className="btn">+</button>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="box">
                 <div className="content">
@@ -156,9 +199,16 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image5} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
-                  Shop Now
-                </Link>
+                <div className="qty-counter">
+                  <Link to="/Payment" className="btn setht">Shop Now</Link>
+                  <div>
+                    <div style={{display: "flex"}}>
+                      <button onClick={decrementCount} className="btn">-</button>
+                      <h1>{count}</h1>
+                      <button onClick={incrementCount} className="btn">+</button>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="box">
                 <div className="content">
@@ -168,9 +218,16 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image6} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
-                  Shop Now
-                </Link>
+                <div className="qty-counter">
+                  <Link to="/Payment" className="btn setht">Shop Now</Link>
+                  <div>
+                    <div style={{display: "flex"}}>
+                      <button onClick={decrementCount} className="btn">-</button>
+                      <h1>{count}</h1>
+                      <button onClick={incrementCount} className="btn">+</button>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="box">
                 <div className="content">
@@ -180,9 +237,16 @@ const Home = () => {
                 <figure className="figure">
                   <img src={image7} alt="banner" className="img" />
                 </figure>
-                <Link to="/MainCategory" className="btn">
-                  Shop Now
-                </Link>
+                <div className="qty-counter">
+                  <Link to="/Payment" className="btn setht">Shop Now</Link>
+                  <div>
+                    <div style={{display: "flex"}}>
+                      <button onClick={decrementCount} className="btn">-</button>
+                      <h1>{count}</h1>
+                      <button onClick={incrementCount} className="btn">+</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>

@@ -354,16 +354,24 @@
   object-position: center;
   padding: 2rem 0;
 }
+
+.qty-counter {
+  display: inline-flex;
+}
+
+.setht {
+  height: fit-content;
+}
 .category .container .box .btn {
   color: var(--white);
-  border-radius: 0;
-  display: block;
-  width: 100%;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
+  border-radius: 0.5;
+  padding:10px;
+  width: auto;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
 }
+
 .category .container .box:hover .btn {
   background: var(--green);
   color: var(--black30);
