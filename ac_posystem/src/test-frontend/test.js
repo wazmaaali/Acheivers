@@ -1,10 +1,11 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import "@testing-library/jest-dom";
-import ReactDOM from "react-dom";
-import Home from "../pages/Home";
-import TestUtils from "react-dom";
+import "react";
+// import "@testing-library/react";
+// import "@testing-library/user-event";
+// import "@testing-library/jest-dom";
+// import "react-dom";
+// import Home from "../pages/Home";
+// import "react-dom";
+
 describe("ToggleComponent", () => {
   it("Should be true", () => {
     const test = true;
@@ -12,13 +13,18 @@ describe("ToggleComponent", () => {
   });
 });
 
-it("renders an h1", function () {
-  var component = TestUtils.renderIntoDocument(<Home />); // .renderIntoDocument(<Home />);
+// it("ggjgj", () => {
+//   const { getByTestId } = render(<Home />);
+//   const input1 = getByTestId("h1");
+//   expect(input1).toBe("VEGETABLE");
+// });
+// it("renders an h1", function () {
+//   var component = TestUtils.renderIntoDocument(<Home />);
 
-  var h1 = TestUtils.findRenderedDOMComponentWithTag(component, "h1");
+//   var h1 = TestUtils.findRenderedDOMComponentWithTag(component, "h1");
 
-  expect(h1.getDOMNode().textContent).toEqual("Achievers Grocery");
-});
+//   expect(h1.getDOMNode().textContent).toEqual("Achievers Grocery");
+// });
 
 // describe("If on Category button clicked", () => {
 //   it("renders without crashing", () => {
