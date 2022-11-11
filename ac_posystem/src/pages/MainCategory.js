@@ -72,14 +72,6 @@ const MainCategory = () => {
         </div>
       </section>
 
-      <section className="navbar" id="navbar">
-        <div className="iconContainer">        
-          <Link to="/Cart" className="iconLink" >
-            <i className="fa fas fa-shopping-cart icon"></i>
-            </Link> 
-        </div>
-      </section>
-
       <section id="product" className="product">
         <h2 className="sectionTitle"> Vegetables</h2>
         <div className="container">
