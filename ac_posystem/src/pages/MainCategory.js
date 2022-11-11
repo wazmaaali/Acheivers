@@ -16,9 +16,11 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 var cat = "";
-
+var datalist = [];
+var addTOCart = [];
 const MainCategory = () => {
   const location = useLocation();
   cat = location.state.id;
@@ -29,7 +31,7 @@ const MainCategory = () => {
         const res = await axios.get(
           "http://localhost:8803/sub_categories/" + location.state.id
         );
-
+        datalist = res.data;
         document.getElementById("h1").innerHTML = res.data[0].sc_name;
         document.getElementById("h2").innerHTML = res.data[1].sc_name;
         document.getElementById("h3").innerHTML = res.data[2].sc_name;
@@ -79,9 +81,16 @@ const MainCategory = () => {
 
       <section className="navbar" id="navbar">
         <div className="iconContainer">
-          <a className="iconLink" title="Shopping Cart">
-            <i className="fa fas fa-shopping-cart icon"></i>
-          </a>
+          <Link
+            to="/Cart"
+            state={{
+              value: addTOCart,
+            }}
+          >
+            <a className="iconLink" title="Shopping Cart">
+              <i className="fa fas fa-shopping-cart icon"></i>
+            </a>
+          </Link>
         </div>
       </section>
 
@@ -100,7 +109,7 @@ const MainCategory = () => {
               <span className="previous">$15.3</span>
             </div>
 
-            <button type="button" className="btn" onClick={handleClick("b1")}>
+            <button id="b1" type="button" className="btn" onClick={handleClick}>
               Add to Cart
             </button>
           </div>
@@ -116,7 +125,7 @@ const MainCategory = () => {
               <span className="previous">$15.3</span>
             </div>
 
-            <button type="button" className="btn">
+            <button id="b2" type="button" className="btn" onClick={handleClick}>
               Add To Cart
             </button>
           </div>
@@ -132,7 +141,7 @@ const MainCategory = () => {
               <span className="previous">$15.3</span>
             </div>
 
-            <button type="button" className="btn">
+            <button id="b3" type="button" className="btn" onClick={handleClick}>
               Add To Cart
             </button>
           </div>
@@ -148,7 +157,7 @@ const MainCategory = () => {
               <span className="previous">$15.3</span>
             </div>
 
-            <button type="button" className="btn">
+            <button id="b4" type="button" className="btn" onClick={handleClick}>
               Add To Cart
             </button>
           </div>
@@ -164,7 +173,7 @@ const MainCategory = () => {
               <span className="previous">$15.3</span>
             </div>
 
-            <button type="button" className="btn">
+            <button id="b5" type="button" className="btn" onClick={handleClick}>
               Add To Cart
             </button>
           </div>
@@ -180,7 +189,7 @@ const MainCategory = () => {
               <span className="previous">$15.3</span>
             </div>
 
-            <button type="button" className="btn">
+            <button id="b6" type="button" className="btn" onClick={handleClick}>
               Add To Cart
             </button>
           </div>
@@ -190,7 +199,27 @@ const MainCategory = () => {
   );
 };
 
-const handleClick = (id) => {
-  console.log("9999 cat: ", id);
+const handleClick = (e) => {
+  console.log(e.target.id, "999 : ", datalist[1]);
+  const a = e.target.id;
+  if (a == "b1") {
+    addTOCart.push(datalist[0]);
+  }
+  if (a == "b2") {
+    addTOCart.push(datalist[1]);
+  }
+  if (a == "b3") {
+    addTOCart.push(datalist[2]);
+  }
+  if (a == "b4") {
+    addTOCart.push(datalist[3]);
+  }
+  if (a == "b5") {
+    addTOCart.push(datalist[4]);
+  }
+  if (a == "b6") {
+    addTOCart.push(datalist[5]);
+  }
 };
+
 export default MainCategory;
