@@ -16,6 +16,9 @@ jobs:
       - run:
           name: install dependencies
           command: npm install
+      - run:
+          name: run test cases
+          command: npm run test
       
 workflows:
   sample:
