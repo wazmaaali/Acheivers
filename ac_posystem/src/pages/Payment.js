@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class Payment extends React.Component {
     render() {
         let total = window.sessionStorage.getItem("total");
-        let tax = 10000 + total;
+        // let tax = 10000 + total;
         return (
             <div>
                 <div>
