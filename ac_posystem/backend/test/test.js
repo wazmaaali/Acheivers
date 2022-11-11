@@ -2,6 +2,7 @@ import express from "express";
 import supertest from "supertest";
 import { toBeEmpty } from "@testing-library/jest-dom/dist/matchers";
 import { shallow } from "enzyme";
+import Cart from "../../src/pages/Cart";
 
 const app = express();
 
@@ -60,5 +61,28 @@ describe("[UNIT] Testing the App component", () => {
     it("displays 0 as a default value", () => {
       expect(wrapper.find("h1").text()).toContain("VEGETABLES");
     });
+  });
+//Cart button
+  describe("If on cart icon clicked", () => {
+    it("Testing cart icon button", () => {
+      wrapper = shallow(<App />);
+    });
+
+    it("cart icon with list of items", () => {
+      const wrapper = shallow(<App />);
+      expect(wrapper.contains(Cart)).toEqual(true);
+    });
+  });
+
+//list of categories
+  describe("listing all items", () => {
+    it("Testing on list of items", () => {
+    wrapper = shallow(<App />);
+    });
+
+  it("Adding prices of items", () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.contains(length)).toEqual(false);
+  });
   });
 });
