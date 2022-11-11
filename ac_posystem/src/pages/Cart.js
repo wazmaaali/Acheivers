@@ -95,7 +95,41 @@ function Cart() {
               </div>
             ))}
 
-            
+            {cartItems.length !== 0 && (
+              <>
+                <hr></hr>
+
+                <div className="d-flex-space-between">
+                  <div>Items Price</div>
+                  <div>${itemsPrice.toFixed(2)}</div>
+                </div>
+
+                <div className="d-flex-space-between">
+                  <div>Shipping Price</div>
+                  <div>${shippingPrice.toFixed(2)}</div>
+                </div>
+
+                <div className="d-flex-space-between">
+                  <div>
+                    <b>Total Price</b>
+                  </div>
+                  <div>
+                    <b>${totalPrice.toFixed(2)}</b>
+                  </div>
+                </div>
+
+                <hr />
+                <div className="  ">
+                  <button className="btn-checkout">Checkout</button>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+
+      
+      </div>
+    </div>
   );
 }
 export default Cart;
