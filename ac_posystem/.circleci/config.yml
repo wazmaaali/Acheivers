@@ -2,7 +2,7 @@ version: 2.1
 
 jobs:
   build-and-test-backend:
-    working_directory: ~/zds-site
+    working_directory: ~/ac_posystem
     docker:
       - image: cimg/node:18.12.0
     steps:
