@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   build-and-test-backend:
-    working_directory: ~/ac_posystem
+    working_directory: ~/ac_posystem/backend/test-backend
     docker:
       - image: cimg/node:18.12.0
     steps:
@@ -11,7 +11,7 @@ jobs:
           command: pwd
       - run:
           name: install dependencies
-          command: cd test-backend && npm install
+          command: npm install
       
 workflows:
   sample:
