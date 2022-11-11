@@ -1,10 +1,4 @@
 import "react";
-// import "@testing-library/react";
-// import "@testing-library/user-event";
-// import "@testing-library/jest-dom";
-// import "react-dom";
-// import Home from "../pages/Home";
-// import "react-dom";
 
 describe("ToggleComponent", () => {
   it("Should be true", () => {

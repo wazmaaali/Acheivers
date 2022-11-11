@@ -15,7 +15,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 import React from "react";
 
-var dataList = [];
 const Home = () => {
   const [home, setCategories] = useState([]);
   useEffect(() => {
@@ -23,7 +22,6 @@ const Home = () => {
       try {
         const res = await axios.get("http://localhost:8803/categories");
         setCategories(res.data);
-        dataList = res.data;
         document.getElementById("h1").innerHTML = res.data[0].c_name;
         document.getElementById("h2").innerHTML = res.data[1].c_name;
         document.getElementById("h3").innerHTML = res.data[2].c_name;

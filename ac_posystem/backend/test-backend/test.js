@@ -1,7 +1,7 @@
-import { check } from "../db.js";
-import { dataCheckVal } from "../db.js";
-import { value } from "../db.js";
-import { subCatvalue } from "../db.js";
+import { check } from "../dummy-function.js";
+import { dataCheckVal } from "../dummy-function.js";
+import { value } from "../dummy-function.js";
+import { subCatvalue } from "../dummy-function.js";
 
 const a = { id: 3, c_name: "MEAT", c_img: "category-3.png" };
 test("if service instance is created", () => {

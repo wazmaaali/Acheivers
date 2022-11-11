@@ -18,6 +18,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 var cat = "";
+
 const MainCategory = () => {
   const location = useLocation();
   cat = location.state.id;
@@ -85,7 +86,7 @@ const MainCategory = () => {
       </section>
 
       <section id="product" className="product">
-        <h2 className="sectionTitle"> {cat}</h2>
+        <h2 className="sectionTitle"> Vegetables</h2>
         <div className="container">
           <div className="box">
             <h3 className="discount">-17.5%</h3>
@@ -99,8 +100,8 @@ const MainCategory = () => {
               <span className="previous">$15.3</span>
             </div>
 
-            <button type="button" className="btn">
-              Add
+            <button type="button" className="btn" onClick={handleClick("b1")}>
+              Add to Cart
             </button>
           </div>
 
@@ -189,4 +190,7 @@ const MainCategory = () => {
   );
 };
 
+const handleClick = (id) => {
+  console.log("9999 cat: ", id);
+};
 export default MainCategory;
