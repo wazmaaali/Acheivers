@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 class Payment extends React.Component {
     render() {
+        let total = window.sessionStorage.getItem("total");
+        let tax = 10000 + total;
         return (
             <div>
                 <div>
@@ -21,7 +23,7 @@ class Payment extends React.Component {
                                                 </div>
                                                 <div class="summary-item"><span class="text">Discount</span><span class="price">$10</span></div>
                                                 <div class="summary-item"><span class="text">Shipping</span><span class="price">$5</span></div>
-                                                <div class="summary-item"><span class="text">Total</span><span class="price">$355</span></div>
+                                                <div class="summary-item"><span class="text">Total</span><span class="price">{total}</span></div>
                                                 <button type="button" class="btn btn-primary btn-lg btn-block">Continue Shopping</button>
                                             </div>
                                         
