@@ -10,6 +10,9 @@ jobs:
           name: Current Directory
           command: pwd
       - run:
+          name: list all files in current Directory
+          command: ls
+      - run:
           name: install dependencies
           command: npm install
       
