@@ -6,7 +6,9 @@ jobs:
       - image: cimg/node:18.12.0
     steps:
       - checkout
-        
+      - run:
+          name: Current Directory
+          command: pwd
       - run:
           name: install dependencies
           command: cd test-backend && npm install
