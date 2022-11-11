@@ -1,12 +1,12 @@
 version: 2.1
 jobs:
   build-and-test-backend:
-    working_directory: ~/ac_posystem/backend
+    working_directory: ~/AchiversCodeRoot/ac_posystem/backend
     docker:
       - image: cimg/node:18.12.0
     steps:
       - checkout:
-          path: ~/ac_posystem/backend
+          path: ~/AchiversCodeRoot
       - run:
           name: Current Directory
           command: pwd
