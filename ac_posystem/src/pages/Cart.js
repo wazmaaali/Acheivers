@@ -64,7 +64,38 @@ function Cart() {
           </div>
         </div>
 
-        
+        <div className="right">
+          <h2>Cart Items</h2>
+          <div>
+            {cartItems.length === 0 && (
+              <div>
+                <img
+                  src="https://mir-s3-cdn-cf.behance.net/projects/404/95974e121862329.Y3JvcCw5MjIsNzIxLDAsMTM5.png"
+                  className="w-100"
+                />
+              </div>
+            )}
+            {cartItems.map((item) => (
+              <div key={item.id} className="added-item-row">
+                <div className="">{item.name}</div>
+                <div
+                  className=""
+                  style={{ display: "flex", alignItems: "center" }}
+                >
+                  <button onClick={() => onRemove(item)} className="remove">
+                    -
+                  </button>{" "}
+                  <div style={{ paddingLeft: 20, paddingRight: 20 }}>
+                    {item.qty} x ${item.price.toFixed(2)}
+                  </div>
+                  <button onClick={() => onAdd(item)} className="add">
+                    +
+                  </button>
+                </div>
+              </div>
+            ))}
+
+            
   );
 }
 export default Cart;
