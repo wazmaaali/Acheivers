@@ -5,7 +5,8 @@ jobs:
     docker:
       - image: cimg/node:18.12.0
     steps:
-      - checkout
+      - checkout:
+          path: ~/ac_posystem/backend
       - run:
           name: Current Directory
           command: pwd
