@@ -15,6 +15,7 @@ import image9 from "../assets/images/product-9.png";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const MainCategory = () => {
   // const [sb_c, setSubCategories] = useState([]);
@@ -72,10 +73,10 @@ const MainCategory = () => {
       </section>
 
       <section className="navbar" id="navbar">
-        <div className="iconContainer">
-          <a className="iconLink" title="Shopping Cart">
+        <div className="iconContainer">        
+          <Link to="/Cart" className="iconLink" >
             <i className="fa fas fa-shopping-cart icon"></i>
-          </a>
+            </Link> 
         </div>
       </section>
 
