@@ -101,7 +101,7 @@ a:link {
   background: var(--red100);
   color: var(--white);
   padding: 1rem 3rem;
-  border-radius: 2rem;
+  border-radius: initial;
   cursor: pointer;
   outline: 0;
   border: 0;
