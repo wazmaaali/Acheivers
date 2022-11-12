@@ -1,19 +1,26 @@
 version: 2.1
-
 jobs:
-  build-and-test-javascript:
+  build-and-test-backend:
+    working_directory: ~/AchiversCodeRoot/ac_posystem/backend
     docker:
-      - image: cimg/node:14.20.0
+      - image: cimg/node:18.12.0
     steps:
-      - checkout
+      - checkout:
+          path: ~/AchiversCodeRoot
+      - run:
+          name: Current Directory
+          command: pwd
+      - run:
+          name: list all files in current Directory
+          command: ls
       - run:
           name: install dependencies
-          command: cd "/Users/saira/Acheivers/ac_posystem/backend/test" && npm install
-
+          command: npm install
       - run:
-          name: run test
-          command: cd "/Users/saira/Acheivers/ac_posystem/backend/test" && npm run test
+          name: run test cases
+          command: npm run test
+
 workflows:
   sample:
     jobs:
-      - build-and-test-javascript
+      - build-and-test-backend

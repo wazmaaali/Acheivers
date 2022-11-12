@@ -21,17 +21,20 @@ app.get("/categories", (req, res) => {
       console.log("Error: ", err);
       return res.json(err);
     } else {
-      console.log("Data: ", data);
+      // console.log("Data: ", data);
       // const obj = Object.entries(data);
       // obj.forEach(([key, value]) => console.log(key, value));
-
       return res.json(data);
     }
   });
 });
 
-app.get("/sub_categories", (req, res) => {
-  const sb_c = "SELECT * FROM achievers_schema.sub_categories";
+app.get("/sub_categories/:id", (req, res) => {
+  console.log("999999 Constants.c_id in db: ", req.params.id);
+
+  const sb_c =
+    "SELECT * FROM achievers_schema.sub_categories WHERE c_id = " +
+    req.params.id;
   pool.query(sb_c, (err, data) => {
     if (err) {
       console.log("Error: ", err);
