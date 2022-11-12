@@ -26,19 +26,16 @@ describe("Cart total", ()=>{
     })
 })
 
-// describe("Cart total", ()=>{
+describe("Cart length", ()=>{
    
-//     test("Checking check", ()=>{
-//         const cart = [
-//             { cart: "Apple", price: 500 },
-//             { cart: "Mango", price: 50 },
-//             { cart: "Melon", price: 60 },
-//             { cart: "Berry", price: 30 },
-//             { cart: "Jack", price: 200 },
-//         ]
-//         expect(cart.length).toEqual(0);
-//     })
-// })
+    test("Checking length ", ()=>{
+        const cart = [
+            { cart: "Apple", price: 500 },
+            { cart: "Mango", price: 50 },
+        ]
+        expect(cart.length).not.toEqual(0);
+    })
+})
 
 // test('render the title of an application', () => { 
 //     test("Checking check", ()=>{
