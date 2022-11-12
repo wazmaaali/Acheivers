@@ -98,7 +98,7 @@ a:link {
   cursor: pointer;
 }
 .btn {
-  background: var(--green150);
+  background: var(--red100);
   color: var(--white);
   padding: 1rem 3rem;
   border-radius: 2rem;
