@@ -10,12 +10,20 @@ class Calculations extends React.Component {
             { cart: "Jack", price: 200 },
         ]
         let total = 0;
+        let tax = 0;
+        let ship = 0;
 
         cart.forEach(item => {
             total = total + item.price;
         });
+
+        tax = total * 0.18;
+        ship = total + 10; 
+
         console.log(total)
         window.sessionStorage.setItem("total", total);
+        window.sessionStorage.setItem("tax", tax);
+        window.sessionStorage.setItem("ship", ship);
         return (
               <p>calculation worked</p>
           );

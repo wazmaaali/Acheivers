@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 class Payment extends React.Component {
     render() {
         let total = window.sessionStorage.getItem("total");
+        let tax = window.sessionStorage.getItem("tax");
+        let ship = window.sessionStorage.getItem("ship");
         // let tax = 10000 + total;
         return (
             <div>
@@ -19,11 +21,11 @@ class Payment extends React.Component {
                                         
                                             <div class="summary">
                                                 <h3>Summary</h3>
-                                                <div class="summary-item"><span class="text">Subtotal</span><span class="price">$360</span>
+                                                <div class="summary-item"><span class="text">Subtotal</span><span class="price">{total}</span>
                                                 </div>
-                                                <div class="summary-item"><span class="text">Discount</span><span class="price">$10</span></div>
-                                                <div class="summary-item"><span class="text">Shipping</span><span class="price">$5</span></div>
-                                                <div class="summary-item"><span class="text">Total</span><span class="price">{total}</span></div>
+                                                <div class="summary-item"><span class="text">Discount</span><span class="price">$NA</span></div>
+                                                <div class="summary-item"><span class="text">Shipping</span><span class="price">{ship}</span></div>
+                                                <div class="summary-item"><span class="text">Total</span><span class="price">{tax}</span></div>
                                                 <button type="button" class="btn btn-primary btn-lg btn-block">Continue Shopping</button>
                                             </div>
                                         
