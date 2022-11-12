@@ -103,7 +103,6 @@ const Home = () => {
                   <img src={image1} alt="banner" className="img" />
                 </figure>
                 <div className="qty-counter">
-                  <Link to="/Payment" className="btn setht">Shop Now</Link>
                   <div>
                     <div style={{display: "flex"}}>
                       <button onClick={decrementCount} className="btn">-</button>
@@ -122,7 +121,6 @@ const Home = () => {
                   <img src={image2} alt="banner" className="img" />
                 </figure>
                 <div className="qty-counter">
-                  <Link to="/Payment" className="btn setht">Shop Now</Link>
                   <div>
                     <div style={{display: "flex"}}>
                       <button onClick={decrementCount} className="btn">-</button>
@@ -141,7 +139,6 @@ const Home = () => {
                   <img src={image3} alt="banner" className="img" />
                 </figure>
                 <div className="qty-counter">
-                  <Link to="/Payment" className="btn setht">Shop Now</Link>
                   <div>
                     <div style={{display: "flex"}}>
                       <button onClick={decrementCount} className="btn">-</button>
@@ -160,7 +157,6 @@ const Home = () => {
                   <img src={image4} alt="banner" className="img" />
                 </figure>
                 <div className="qty-counter">
-                  <Link to="/Payment" className="btn setht">Shop Now</Link>
                   <div>
                     <div style={{display: "flex"}}>
                       <button onClick={decrementCount} className="btn">-</button>
@@ -181,7 +177,6 @@ const Home = () => {
                   <img src={image4} alt="banner" className="img" />
                 </figure>
                 <div className="qty-counter">
-                  <Link to="/Payment" className="btn setht">Shop Now</Link>
                   <div>
                     <div style={{display: "flex"}}>
                       <button onClick={decrementCount} className="btn">-</button>
@@ -200,7 +195,6 @@ const Home = () => {
                   <img src={image5} alt="banner" className="img" />
                 </figure>
                 <div className="qty-counter">
-                  <Link to="/Payment" className="btn setht">Shop Now</Link>
                   <div>
                     <div style={{display: "flex"}}>
                       <button onClick={decrementCount} className="btn">-</button>
@@ -219,7 +213,6 @@ const Home = () => {
                   <img src={image6} alt="banner" className="img" />
                 </figure>
                 <div className="qty-counter">
-                  <Link to="/Payment" className="btn setht">Shop Now</Link>
                   <div>
                     <div style={{display: "flex"}}>
                       <button onClick={decrementCount} className="btn">-</button>
@@ -238,7 +231,6 @@ const Home = () => {
                   <img src={image7} alt="banner" className="img" />
                 </figure>
                 <div className="qty-counter">
-                  <Link to="/Payment" className="btn setht">Shop Now</Link>
                   <div>
                     <div style={{display: "flex"}}>
                       <button onClick={decrementCount} className="btn">-</button>
