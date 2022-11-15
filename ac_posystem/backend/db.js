@@ -10,7 +10,7 @@ app.use(express.json());
 let pool = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "winter12",
+  password: "password",
   database: "achievers_schema",
 });
 
