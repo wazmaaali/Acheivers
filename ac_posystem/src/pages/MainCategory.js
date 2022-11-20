@@ -17,10 +17,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+// import jsontxt from "./jsontxt.json";
 
 var cat = "";
 var datalist = [];
 var addTOCart = [];
+
 const MainCategory = () => {
   const location = useLocation();
   cat = location.state.id;
@@ -86,6 +88,7 @@ const MainCategory = () => {
             state={{
               value: addTOCart,
             }}
+            onClick={sendData}
           >
             <a className="iconLink" title="Shopping Cart">
               <i className="fa fas fa-shopping-cart icon"></i>
@@ -220,6 +223,23 @@ const handleClick = (e) => {
   if (a == "b6") {
     addTOCart.push(datalist[5]);
   }
+  // console.log("9999:sendData:  ", addTOCart);
+  // sendData(addTOCart);
+  //  handleSaveToPC(dataCheck, jsontxt);
+};
+const url = "http://localhost:8803/dataFromCart";
+let sendData = () => {
+  console.log("999 inside sendData");
+
+  // fetch("http://localhost:8803/dataFromCart", {
+  //   method: "POST",
+  //   headers: { "Content-Type": "application/JSON" },
+  //   body: JSON.stringify(addTOCart),
+  // });
+  axios
+    .post(url, addTOCart)
+    .then((res) => console.log("Data send"))
+    .catch((err) => console.log("error: ", err.data));
 };
 
 export default MainCategory;

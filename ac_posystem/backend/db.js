@@ -1,6 +1,12 @@
 import express from "express";
 import mysql from "mysql";
 import cors from "cors";
+import * as fs from "fs";
+
+import jsontxt from "./jsontxt.json" assert { type: "json" };
+// import React, { Component } from "react";
+
+const DATA_PATH = "jsontxt";
 
 const app = express();
 
@@ -30,7 +36,7 @@ app.get("/categories", (req, res) => {
 });
 
 app.get("/sub_categories/:id", (req, res) => {
-  console.log("999999 Constants.c_id in db: ", req.params.id);
+  // console.log("999999 Constants.c_id in db: ", req.params.id);
 
   const sb_c =
     "SELECT * FROM achievers_schema.sub_categories WHERE c_id = " +
@@ -43,7 +49,6 @@ app.get("/sub_categories/:id", (req, res) => {
       // console.log("Data: ", data);
       // const obj = Object.entries(data);
       // obj.forEach(([key, value]) => console.log(key, value));
-
       return res.json(data);
     }
   });
@@ -53,6 +58,29 @@ app.get("/", (req, res) => {
   res.json("Hello backend");
 });
 
+app.post("/dataFromCart", function (req, res) {
+  var countValue = req.body;
+  console.log("99999 CountValue is", countValue);
+  writeData(countValue);
+});
+
 app.listen(8803, () => {
   console.log("Connect to backed");
 });
+//Write data in file
+const writeData = (data) => {
+  fs.writeFile(DATA_PATH, JSON.stringify(data), (err) => {
+    if (err) return console.error(err);
+    console.log("Wrote data to ", DATA_PATH);
+  });
+};
+
+function readData() {
+  fs.readFile("./jsontxt", "utf8", (err, jsonString) => {
+    if (err) {
+      console.log("File read failed:", err);
+      return;
+    }
+    console.log("File data:", jsonString);
+  });
+}
