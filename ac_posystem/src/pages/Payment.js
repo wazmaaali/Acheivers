@@ -1,20 +1,19 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-class Payment extends React.Component {
+class Payment extends React.Component { 
     render() {
         return (
             <div>
                 <div>
+                    <div class="wrapper"> 
 
-                    <div class="wrapper">
                         <div class=" a">
                             <div class="page">
                                 <section class="shopping-cart dark" style={{margin:100}}>
                                     {/* <div class="container">
                                         <div class="block-heading">
                                         </div> */}
-                                        
                                             <div class="summary">
                                                 <h3>Summary</h3>
                                                 <div class="summary-item"><span class="text">Subtotal</span><span class="price">$360</span>
@@ -24,15 +23,13 @@ class Payment extends React.Component {
                                                 <div class="summary-item"><span class="text">Total</span><span class="price">$355</span></div>
                                                 <button type="button" class="btn btn-primary btn-lg btn-block">Continue Shopping</button>
                                             </div>
-                                        
                                     {/* </div> */}
                                 </section>
                             </div>
-
                         </div>
+
                         <div class=" b">
                             <div className="container">
-
                                 <form action="/ConfiromationPage">
 
                                     <div className="row">
@@ -53,7 +50,6 @@ class Payment extends React.Component {
                                                 <span>Phone Number :</span>
                                                 <input type="text" placeholder="+1-1234567890" />
                                             </div>
-
                                             <div >
                                                 <div><img src="/asserts/images/wallet.jpeg" alt="Cash Icon" width="320" height="120" /></div>
                                                 <div><input type="submit" value="Cash" className="submit" /> </div>
@@ -96,24 +92,15 @@ class Payment extends React.Component {
 
                                     </div>
                                     
-                                    <input type="submit" value="proceed to checkout" className="submit-btn" />
-
+                                 <input type="submit" value="proceed to checkout" className="submit-btn" />
                                 </form>
-
-
                             </div>
-
                         </div>
 
                     </div>
-
-
                 </div>
             </div>
-
         );
-
-
     }
 }
 
