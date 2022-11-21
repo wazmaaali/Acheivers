@@ -22,12 +22,36 @@ const Home = () => {
       try {
         const res = await axios.get("http://localhost:8803/categories");
         setCategories(res.data);
+        // img1 = "rsz_josh.jpg";
+        // imgUrl = document.getElementById('chango').src
+
         document.getElementById("h1").innerHTML = res.data[0].c_name;
         document.getElementById("h2").innerHTML = res.data[1].c_name;
         document.getElementById("h3").innerHTML = res.data[2].c_name;
         document.getElementById("h4").innerHTML = res.data[3].c_name;
         document.getElementById("h5").innerHTML = res.data[4].c_name;
         document.getElementById("h6").innerHTML = res.data[5].c_name;
+
+        document.getElementById("img1").src = res.data[0].c_img;
+        document.getElementById("img2").src = res.data[1].c_img;
+        document.getElementById("img3").src = res.data[2].c_img;
+        document.getElementById("img4").src = res.data[3].c_img;
+        document.getElementById("img5").src = res.data[4].c_img;
+        document.getElementById("img6").src = res.data[5].c_img;
+
+        //save pleasesaved save please saveballayy g bakkay
+        // document.getElementById("img2").innerHTML = res.data[1].c_img;
+        // document.getElementById("img3").innerHTML = res.data[2].c_img;save & test
+        //should i remove the extra slash? is this working?no,can you see my browser?sho
+        // w now ok save & test it was empty wesy with th is sign ?
+        // waittttttt show again please
+        // i m already doing it esy naviga s
+        // ssssshhhh justfoor testing save phir i will moduifyohh ok
+        //you cannsote cseuerity its not allowing broser, you cannot see me typing on browser
+        //where is this security wait,what?kia
+        // document.getElementById("img4").innerHTML = res.data[3].c_img;
+        // document.getElementById("img5").innerHTML = res.data[4].c_img;
+        // document.getElementById("img6").innerHTML = res.data[5].c_img;
       } catch (err) {
         console.log("99999 Error: ", err);
       }
@@ -83,7 +107,7 @@ const Home = () => {
                   <h4 className="subTitle">Upto 27.5% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image1} alt="banner" className="img" />
+                  <img id="img1" alt="banner" className="img" />
                 </figure>
 
                 <Link
@@ -102,7 +126,7 @@ const Home = () => {
                   <h4 className="subTitle">Upto 50% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image4} alt="banner" className="img" />
+                  <img id="img2" alt="banner" className="img" />
                 </figure>
                 <Link
                   to="/MainCategory"
@@ -120,7 +144,7 @@ const Home = () => {
                   <h4 className="subTitle">Upto 35% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image3} alt="banner" className="img" />
+                  <img id="img3" alt="banner" className="img" />
                 </figure>
                 <Link
                   to="/MainCategory"
@@ -140,7 +164,7 @@ const Home = () => {
                   <h4 className="subTitle">Upto 27.5% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image2} alt="banner" className="img" />
+                  <img id="img4" alt="banner" className="img" />
                 </figure>
 
                 <Link
@@ -159,7 +183,7 @@ const Home = () => {
                   <h4 className="subTitle">Upto 50% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image5} alt="banner" className="img" />
+                  <img id="img5" alt="banner" className="img" />
                 </figure>
                 <Link
                   to="/MainCategory"
@@ -177,7 +201,7 @@ const Home = () => {
                   <h4 className="subTitle">Upto 35% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image7} alt="banner" className="img" />
+                  <img id="img6" alt="banner" className="img" />
                 </figure>
                 <Link
                   to="/MainCategory"

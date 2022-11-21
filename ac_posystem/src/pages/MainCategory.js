@@ -39,14 +39,21 @@ const MainCategory = () => {
         document.getElementById("h3").innerHTML = res.data[2].sc_name;
         document.getElementById("h4").innerHTML = res.data[3].sc_name;
         document.getElementById("h5").innerHTML = res.data[4].sc_name;
-        // document.getElementById("h6").innerHTML = res.data[5].sc_name;
+        document.getElementById("h6").innerHTML = res.data[5].sc_name;
 
         document.getElementById("p1").innerHTML = res.data[0].sc_price;
         document.getElementById("p2").innerHTML = res.data[1].sc_price;
         document.getElementById("p3").innerHTML = res.data[2].sc_price;
         document.getElementById("p4").innerHTML = res.data[3].sc_price;
         document.getElementById("p5").innerHTML = res.data[4].sc_price;
-        // document.getElementById("p6").innerHTML = res.data[5].sc_price;
+        document.getElementById("p6").innerHTML = res.data[5].sc_price;
+
+        document.getElementById("img1").src = res.data[0].sc_image;
+        document.getElementById("img2").src = res.data[1].sc_image;
+        document.getElementById("img3").src = res.data[2].sc_image;
+        document.getElementById("img4").src = res.data[3].sc_image;
+        document.getElementById("img5").src = res.data[4].sc_image;
+        document.getElementById("img6").src = res.data[5].sc_image;
 
         console.log("99999 data: ", res.data[0].sc_price);
       } catch (err) {
@@ -101,9 +108,8 @@ const MainCategory = () => {
         <h2 className="sectionTitle"> Vegetables</h2>
         <div className="container">
           <div className="box">
-            <h3 className="discount">-17.5%</h3>
             <figure className="figure">
-              <img src={image4} alt="banner" className="img" />
+              <img id="img1" alt="banner" className="img" />
             </figure>
             <h2 id="h1" className="title"></h2>
 
@@ -118,9 +124,8 @@ const MainCategory = () => {
           </div>
 
           <div className="box">
-            <h3 className="discount">-17.5%</h3>
             <figure className="figure">
-              <img src={image1} alt="banner" className="img" />
+              <img id="img2" alt="banner" className="img" />
             </figure>
             <h2 id="h2" className="title"></h2>
             <div className="price">
@@ -134,9 +139,8 @@ const MainCategory = () => {
           </div>
 
           <div className="box">
-            <h3 className="discount">-18.5%</h3>
             <figure className="figure">
-              <img src={image2} alt="banner" className="img" />
+              <img id="img3" alt="banner" className="img" />
             </figure>
             <h2 id="h3" className="title"></h2>
             <div className="price">
@@ -150,11 +154,10 @@ const MainCategory = () => {
           </div>
 
           <div className="box">
-            <h3 className="discount">-13.5%</h3>
             <figure className="figure">
-              <img src={image3} alt="banner" className="img" />
+              <img id="img4" alt="banner" className="img" />
             </figure>
-            <h2 className="title">Apple</h2>
+            <h2 id="h4" className="title"></h2>
             <div className="price">
               <span id="p4" className="present"></span>
               <span className="previous">$15.3</span>
@@ -166,11 +169,10 @@ const MainCategory = () => {
           </div>
 
           <div className="box">
-            <h3 className="discount">-10.5%</h3>
             <figure className="figure">
-              <img src={image4} alt="banner" className="img" />
+              <img id="img5" alt="banner" className="img" />
             </figure>
-            <h2 id="h4" className="title"></h2>
+            <h2 id="h5" className="title"></h2>
             <div className="price">
               <span id="p5" className="present"></span>
               <span className="previous">$15.3</span>
@@ -182,11 +184,10 @@ const MainCategory = () => {
           </div>
 
           <div className="box">
-            <h3 className="discount">-30.5%</h3>
             <figure className="figure">
-              <img src={image5} alt="banner" className="img" />
+              <img id="img6" alt="banner" className="img" />
             </figure>
-            <h2 id="h5" className="title"></h2>
+            <h2 id="h6" className="title"></h2>
             <div className="price">
               <span id="p6" className="present"></span>
               <span className="previous">$15.3</span>
@@ -223,19 +224,11 @@ const handleClick = (e) => {
   if (a == "b6") {
     addTOCart.push(datalist[5]);
   }
-  // console.log("9999:sendData:  ", addTOCart);
-  // sendData(addTOCart);
-  //  handleSaveToPC(dataCheck, jsontxt);
 };
 const url = "http://localhost:8803/dataFromCart";
+//Fetch data added in cart and send it to backend
 let sendData = () => {
   console.log("999 inside sendData");
-
-  // fetch("http://localhost:8803/dataFromCart", {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/JSON" },
-  //   body: JSON.stringify(addTOCart),
-  // });
   axios
     .post(url, addTOCart)
     .then((res) => console.log("Data send"))
