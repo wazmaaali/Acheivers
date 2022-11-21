@@ -2,13 +2,6 @@ import "../assets/css/fontawesome.min.css";
 import "../assets/css/default.css";
 import "../assets/css/style.css";
 import "../assets/css/responsive.css";
-import image1 from "../assets/images/category-1.png";
-import image2 from "../assets/images/category-2.png";
-import image3 from "../assets/images/category-3.png";
-import image4 from "../assets/images/category-4.png";
-import image5 from "../assets/images/sauces.png";
-import image6 from "../assets/images/sweets.png";
-import image7 from "../assets/images/frozenfood.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
@@ -22,8 +15,6 @@ const Home = () => {
       try {
         const res = await axios.get("http://localhost:8803/categories");
         setCategories(res.data);
-        // img1 = "rsz_josh.jpg";
-        // imgUrl = document.getElementById('chango').src
 
         document.getElementById("h1").innerHTML = res.data[0].c_name;
         document.getElementById("h2").innerHTML = res.data[1].c_name;
@@ -38,20 +29,6 @@ const Home = () => {
         document.getElementById("img4").src = res.data[3].c_img;
         document.getElementById("img5").src = res.data[4].c_img;
         document.getElementById("img6").src = res.data[5].c_img;
-
-        //save pleasesaved save please saveballayy g bakkay
-        // document.getElementById("img2").innerHTML = res.data[1].c_img;
-        // document.getElementById("img3").innerHTML = res.data[2].c_img;save & test
-        //should i remove the extra slash? is this working?no,can you see my browser?sho
-        // w now ok save & test it was empty wesy with th is sign ?
-        // waittttttt show again please
-        // i m already doing it esy naviga s
-        // ssssshhhh justfoor testing save phir i will moduifyohh ok
-        //you cannsote cseuerity its not allowing broser, you cannot see me typing on browser
-        //where is this security wait,what?kia
-        // document.getElementById("img4").innerHTML = res.data[3].c_img;
-        // document.getElementById("img5").innerHTML = res.data[4].c_img;
-        // document.getElementById("img6").innerHTML = res.data[5].c_img;
       } catch (err) {
         console.log("99999 Error: ", err);
       }
@@ -60,7 +37,6 @@ const Home = () => {
   }, []);
 
   return (
-    // <div dangerouslySetInnerHTML={ {__html: htmlContent} } />
     <div className="App">
       <section className="header">
         <a className="logo">
@@ -82,14 +58,6 @@ const Home = () => {
         </form>
         <div className="mobileMenuHandler">
           <i className="fas fa-bars icon"></i>
-        </div>
-      </section>
-
-      <section className="navbar" id="navbar">
-        <div className="iconContainer">
-          <a className="iconLink" title="Shopping Cart">
-            <i className="fa fas fa-shopping-cart icon"></i>
-          </a>
         </div>
       </section>
 

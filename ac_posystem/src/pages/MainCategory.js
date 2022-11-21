@@ -3,21 +3,11 @@ import "../assets/css/fontawesome.min.css";
 import "../assets/css/default.css";
 import "../assets/css/style.css";
 import "../assets/css/responsive.css";
-import image1 from "../assets/images/product-1.png";
-import image2 from "../assets/images/product-2.png";
-import image3 from "../assets/images/product-3.png";
-import image4 from "../assets/images/product-4.png";
-import image5 from "../assets/images/product-5.png";
-import image6 from "../assets/images/product-6.png";
-import image7 from "../assets/images/product-7.png";
-import image8 from "../assets/images/product-8.png";
-import image9 from "../assets/images/product-9.png";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-// import jsontxt from "./jsontxt.json";
 
 var cat = "";
 var datalist = [];
@@ -56,6 +46,7 @@ const MainCategory = () => {
         document.getElementById("img6").src = res.data[5].sc_image;
 
         console.log("99999 data: ", res.data[0].sc_price);
+        setTitle(location.state.id);
       } catch (err) {
         console.log("99999 Error: ", err);
       }
@@ -105,7 +96,7 @@ const MainCategory = () => {
       </section>
 
       <section id="product" className="product">
-        <h2 className="sectionTitle"> Vegetables</h2>
+        <h2 id="maintitle" className="sectionTitle"></h2>
         <div className="container">
           <div className="box">
             <figure className="figure">
@@ -203,6 +194,7 @@ const MainCategory = () => {
   );
 };
 
+//on button Add to item click, add item into cart array
 const handleClick = (e) => {
   console.log(e.target.id, "999 : ", datalist[1]);
   const a = e.target.id;
@@ -234,5 +226,25 @@ let sendData = () => {
     .then((res) => console.log("Data send"))
     .catch((err) => console.log("error: ", err.data));
 };
-
+//Set Main title of Main Category page on the basis of c_id coming from category page
+let setTitle = (id) => {
+  if (id == 1) {
+    document.getElementById("maintitle").innerHTML = "VEGETABLES";
+  }
+  if (id == 2) {
+    document.getElementById("maintitle").innerHTML = "FRUITS";
+  }
+  if (id == 3) {
+    document.getElementById("maintitle").innerHTML = "MEAT";
+  }
+  if (id == 4) {
+    document.getElementById("maintitle").innerHTML = "DAIRY";
+  }
+  if (id == 5) {
+    document.getElementById("maintitle").innerHTML = "SWEETS";
+  }
+  if (id == 6) {
+    document.getElementById("maintitle").innerHTML = "FROZEFOOD";
+  }
+};
 export default MainCategory;
