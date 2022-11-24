@@ -30,7 +30,7 @@ const Home = () => {
         document.getElementById("img5").src = res.data[4].c_img;
         document.getElementById("img6").src = res.data[5].c_img;
       } catch (err) {
-        console.log("99999 Error: ", err);
+        console.log("Error: ", err);
       }
     };
     fetchCategories();

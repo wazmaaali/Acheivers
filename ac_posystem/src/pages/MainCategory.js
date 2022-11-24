@@ -16,7 +16,7 @@ var addTOCart = [];
 const MainCategory = () => {
   const location = useLocation();
   cat = location.state.id;
-  console.log("9999 cat: ", cat);
+  console.log("9999 cat_id: ", cat);
   useEffect(() => {
     const fetchSubCategories = async () => {
       try {
@@ -45,10 +45,9 @@ const MainCategory = () => {
         document.getElementById("img5").src = res.data[4].sc_image;
         document.getElementById("img6").src = res.data[5].sc_image;
 
-        console.log("99999 data: ", res.data[0].sc_price);
         setTitle(location.state.id);
       } catch (err) {
-        console.log("99999 Error: ", err);
+        console.log("Error: ", err);
       }
     };
     fetchSubCategories();
@@ -81,13 +80,7 @@ const MainCategory = () => {
 
       <section className="navbar" id="navbar">
         <div className="iconContainer">
-          <Link
-            to="/Cart"
-            state={{
-              value: addTOCart,
-            }}
-            onClick={sendData}
-          >
+          <Link to="/Cart" onClick={sendData}>
             <a className="iconLink" title="Shopping Cart">
               <i className="fa fas fa-shopping-cart icon"></i>
             </a>
@@ -194,38 +187,26 @@ const MainCategory = () => {
   );
 };
 
-//on button Add to item click, add item into cart array
+//Add items to cart
 const handleClick = (e) => {
-  console.log(e.target.id, "999 : ", datalist[1]);
+  const mapping = { b1: 0, b2: 1, b3: 2, b4: 3, b5: 4, b6: 5 };
   const a = e.target.id;
-  if (a == "b1") {
-    addTOCart.push(datalist[0]);
-  }
-  if (a == "b2") {
-    addTOCart.push(datalist[1]);
-  }
-  if (a == "b3") {
-    addTOCart.push(datalist[2]);
-  }
-  if (a == "b4") {
-    addTOCart.push(datalist[3]);
-  }
-  if (a == "b5") {
-    addTOCart.push(datalist[4]);
-  }
-  if (a == "b6") {
-    addTOCart.push(datalist[5]);
+  const index = mapping[a];
+  console.log("INDEX == ", index);
+  var item = addTOCart.find((x) => x.sc_id == datalist[index].sc_id);
+  if (item) {
+    item.count = item.count + 1;
+  } else {
+    var item = JSON.parse(JSON.stringify(datalist[index])); //just to make sure its not passing reference
+    item.count = 1;
+    addTOCart.push(item);
   }
 };
-const url = "http://localhost:8803/dataFromCart";
 //Fetch data added in cart and send it to backend
 let sendData = () => {
-  console.log("999 inside sendData");
-  axios
-    .post(url, addTOCart)
-    .then((res) => console.log("Data send"))
-    .catch((err) => console.log("error: ", err.data));
+  sessionStorage.setItem("items", JSON.stringify(addTOCart));
 };
+
 //Set Main title of Main Category page on the basis of c_id coming from category page
 let setTitle = (id) => {
   if (id == 1) {
