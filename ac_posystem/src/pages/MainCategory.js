@@ -60,15 +60,8 @@ const MainCategory = () => {
           <i className="fas fa-shopping-bag icon"></i>
           <h1 className="logoTitle">Achievers Grocery</h1>
         </a>
-
         <form action="" className="searchForm">
-          <input
-            type="search"
-            name="search"
-            id="search"
-            className="searchBox"
-            placeholder="Search here..."
-          />
+          <input type="search" name="search" id="search" className="searchBox" placeholder="Search here..."/>
           <label htmlFor="search" className="searchPointer">
             <i className="fas fa-search icon"></i>
           </label>
@@ -81,6 +74,7 @@ const MainCategory = () => {
       <section className="navbar" id="navbar">
         <div className="iconContainer">
           <Link to="/Cart" onClick={sendData}>
+
             <a className="iconLink" title="Shopping Cart">
               <i className="fa fas fa-shopping-cart icon"></i>
             </a>
@@ -97,15 +91,15 @@ const MainCategory = () => {
             </figure>
             <h2 id="h1" className="title"></h2>
 
+
             <div className="price">
               <span id="p1" className="present"></span>
               <span className="previous">$15.3</span>
             </div>
-
             <button id="b1" type="button" className="btn" onClick={handleClick}>
               Add to Cart
             </button>
-          </div>
+         </div>
 
           <div className="box">
             <figure className="figure">
@@ -116,7 +110,6 @@ const MainCategory = () => {
               <span id="p2" className="present"></span>
               <span className="previous">$15.3</span>
             </div>
-
             <button id="b2" type="button" className="btn" onClick={handleClick}>
               Add To Cart
             </button>
@@ -125,13 +118,13 @@ const MainCategory = () => {
           <div className="box">
             <figure className="figure">
               <img id="img3" alt="banner" className="img" />
+
             </figure>
             <h2 id="h3" className="title"></h2>
             <div className="price">
               <span id="p3" className="present"></span>
               <span className="previous">$15.3</span>
             </div>
-
             <button id="b3" type="button" className="btn" onClick={handleClick}>
               Add To Cart
             </button>
@@ -146,7 +139,6 @@ const MainCategory = () => {
               <span id="p4" className="present"></span>
               <span className="previous">$15.3</span>
             </div>
-
             <button id="b4" type="button" className="btn" onClick={handleClick}>
               Add To Cart
             </button>
@@ -161,7 +153,6 @@ const MainCategory = () => {
               <span id="p5" className="present"></span>
               <span className="previous">$15.3</span>
             </div>
-
             <button id="b5" type="button" className="btn" onClick={handleClick}>
               Add To Cart
             </button>
@@ -176,12 +167,12 @@ const MainCategory = () => {
               <span id="p6" className="present"></span>
               <span className="previous">$15.3</span>
             </div>
-
             <button id="b6" type="button" className="btn" onClick={handleClick}>
               Add To Cart
             </button>
           </div>
         </div>
+
       </section>
     </div>
   );

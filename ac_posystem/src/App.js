@@ -9,14 +9,15 @@ import ConfiromationPage from "./pages/ConfiromationPage";
 function App() {
   return (
     <Router>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/MainCategory" element={<MainCategory />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Payment" element={<Payment />} />
         <Route path="/ConfiromationPage" element={<ConfiromationPage />} />
-
       </Routes>
+      
     </Router>
   );
 }

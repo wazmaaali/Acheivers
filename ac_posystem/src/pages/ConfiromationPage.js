@@ -18,6 +18,7 @@ function ConfiromationPage() {
         The Total amount in the bill is: '$355'
       </div>
       <h3 style={{ textAlign: "center" }}>Please visit Again :-)</h3>
+
     </div>
   );
 }
