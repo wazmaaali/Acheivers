@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 
 class Payment extends React.Component {  
     render() {
+
+        {/* Section Storage*/}
+        // let total = window.sessionStorage.getItem("total");
+        // let tax = 10000 + total;
+        // // console.log(window.sessionStorage.getItem("total"))
+
         {/* HTML Code*/}
         return (
             <div>
