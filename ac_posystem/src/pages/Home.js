@@ -44,18 +44,6 @@ const Home = () => {
           <h1 className="logoTitle">Achievers Grocery</h1>
         </a>
 
-        <form action="" className="searchForm">
-          <input
-            type="search"
-            name="search"
-            id="search"
-            className="searchBox"
-            placeholder="Search here..."
-          />
-          <label htmlFor="search" className="searchPointer">
-            <i className="fas fa-search icon"></i>
-          </label>
-        </form>
         <div className="mobileMenuHandler">
           <i className="fas fa-bars icon"></i>
         </div>
