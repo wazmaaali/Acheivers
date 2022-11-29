@@ -601,10 +601,10 @@
 }
 .contact .form .input {
   flex: 48%;
-  font-size: 2rem;
+  font-size: 25px;
   color: var(--green100);
   padding: 2rem 1rem;
-  line-height: 2.5rem;
+  line-height: 25px;
   border: 0.1rem solid var(--grey150);
   outline: none;
   text-transform: initial;

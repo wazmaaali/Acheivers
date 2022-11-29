@@ -184,4 +184,4 @@ const MainCategory = () => {
   );
 };
 
-export default MainCategory;
+export default MainCategory; 

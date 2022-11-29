@@ -91,7 +91,7 @@ const Home = () => {
         <div className="Category">
           <section id="category" className="category">
             <h2 className="sectionTitle">
-              Shop By <span>Category</span>
+              Shop By <span> Category</span>
             </h2>
             <div className="container">
               <div className="box">
