@@ -113,6 +113,7 @@ const MainCategory = () => {
           <h1 className="logoTitle">Achievers Grocery</h1>
         </a>
 
+
         <form action={filterData} className="searchForm">
           <input
             type="search"
@@ -121,6 +122,7 @@ const MainCategory = () => {
             className="searchBox"
             placeholder="Search by Name..."
           />
+
           <label htmlFor="search" className="searchPointer">
             <i className="fas fa-search icon"></i>
           </label>
@@ -133,6 +135,7 @@ const MainCategory = () => {
       <section className="navbar" id="navbar">
         <div className="iconContainer">
           <Link to="/Cart" onClick={sendData}>
+
             <a className="iconLink" title="Shopping Cart">
               <i className="fa fas fa-shopping-cart icon"></i>
             </a>
@@ -149,10 +152,12 @@ const MainCategory = () => {
             </figure>
             <h2 id="h1" className="title"></h2>
 
+
             <div className="price">
               <span id="p1" className="present"></span>
               <span className="previous">$15.3</span>
             </div>
+
             <div class="modal">
               <div class="modal_content">
                 <span class="close">&times;</span>
@@ -177,6 +182,7 @@ const MainCategory = () => {
             </button> */}
           </div>
 
+
           <div className="box">
             <figure className="figure">
               <img id="img2" alt="banner" className="img" />
@@ -186,6 +192,7 @@ const MainCategory = () => {
               <span id="p2" className="present"></span>
               <span className="previous">$15.3</span>
             </div>
+
             <div style={{ display: "flex", fontSize: "40px" }}>
               <button id="b12" onClick={decrementCount} className="btn">
                 -
@@ -198,6 +205,7 @@ const MainCategory = () => {
               </button>
             </div>
             {/* <button id="b2" type="button" className="btn" onClick={handleClick}>
+
               Add To Cart
             </button> */}
           </div>
@@ -205,12 +213,14 @@ const MainCategory = () => {
           <div className="box">
             <figure className="figure">
               <img id="img3" alt="banner" className="img" />
+
             </figure>
             <h2 id="h3" className="title"></h2>
             <div className="price">
               <span id="p3" className="present"></span>
               <span className="previous">$15.3</span>
             </div>
+
             <div style={{ display: "flex", fontSize: "40px" }}>
               <button id="b13" onClick={decrementCount} className="btn">
                 -
@@ -223,6 +233,7 @@ const MainCategory = () => {
               </button>
             </div>
             {/* <button id="b3" type="button" className="btn" onClick={handleClick}>
+
               Add To Cart
             </button> */}
           </div>
@@ -236,6 +247,7 @@ const MainCategory = () => {
               <span id="p4" className="present"></span>
               <span className="previous">$15.3</span>
             </div>
+
             <div style={{ display: "flex", fontSize: "40px" }}>
               <button id="b14" onClick={decrementCount} className="btn">
                 -
@@ -248,6 +260,7 @@ const MainCategory = () => {
               </button>
             </div>
             {/* <button id="b4" type="button" className="btn" onClick={handleClick}>
+
               Add To Cart
             </button> */}
           </div>
@@ -261,6 +274,7 @@ const MainCategory = () => {
               <span id="p5" className="present"></span>
               <span className="previous">$15.3</span>
             </div>
+
             <div style={{ display: "flex", fontSize: "40px" }}>
               <button id="b15" onClick={decrementCount} className="btn">
                 -
@@ -273,6 +287,8 @@ const MainCategory = () => {
               </button>
             </div>
             {/* <button id="b5" type="button" className="btn" onClick={handleClick}>
+
+           
               Add To Cart
             </button> */}
           </div>
@@ -286,6 +302,7 @@ const MainCategory = () => {
               <span id="p6" className="present"></span>
               <span className="previous">$15.3</span>
             </div>
+
             <div style={{ display: "flex", fontSize: "40px" }}>
               <button
                 id="b16"
@@ -305,8 +322,10 @@ const MainCategory = () => {
             {/* <button id="b6" type="button" className="btn" onClick={handleClick}> */}
             {/* Add To Cart */}
             {/* </button> */}
+
           </div>
         </div>
+
       </section>
     </div>
   );
