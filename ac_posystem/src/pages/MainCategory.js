@@ -173,6 +173,12 @@ const MainCategory = () => {
               <span id="p6" className="present"></span>
               <span className="previous">$15.3</span>
             </div>
+            <div class="modal">
+              <div class="modal_content">
+                <span class="close">&times;</span>
+                <p>Item Added!!!</p>
+              </div>
+            </div>
 
             <button type="button" className="btn">
               Add To Cart
