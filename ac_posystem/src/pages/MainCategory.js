@@ -53,7 +53,6 @@ const MainCategory = () => {
     const mapping = { b11: 0, b12: 1, b13: 2, b14: 3, b15: 4, b16: 5 };
     const a = e.target.id;
     const index = mapping[a];
-    console.log("INDEX == ", index);
     var item = addTOCart.find((x) => x.sc_id == datalist[index].sc_id);
     if (item) {
       if (item.count == 0) {
@@ -66,7 +65,6 @@ const MainCategory = () => {
       item.count = 1;
       addTOCart.pop(item);
     }
-    console.log("INDEX == ", addTOCart);
   };
 
   useEffect(() => {
