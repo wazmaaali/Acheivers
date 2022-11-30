@@ -7,7 +7,7 @@ class Payment extends React.Component {
             <div>
                 <div>
 
-                    <div class="wrapper">
+                    <div class="wrapper"> //wrapper classes
                         <div class=" a">
                             <div class="page">
                                 <section class="shopping-cart dark" style={{margin:100}}>
@@ -18,12 +18,12 @@ class Payment extends React.Component {
                                             <div class="summary">
                                                 <h3>Summary</h3>
                                                 <div class="summary-item"><span class="text">Subtotal</span><span class="price">$360</span>
-                                                </div>
+                                                </div> 
                                                 <div class="summary-item"><span class="text">Discount</span><span class="price">$10</span></div>
                                                 <div class="summary-item"><span class="text">Shipping</span><span class="price">$5</span></div>
                                                 <div class="summary-item"><span class="text">Total</span><span class="price">$355</span></div>
-                                                <button type="button" class="btn btn-primary btn-lg btn-block">Continue Shopping</button>
-                                            </div>
+                                                <button type="button" class="btn btn-primary btn-lg btn-block">Continue Shopping</button> 
+                                            </div> //summary of the total bill
                                         
                                     {/* </div> */}
                                 </section>
@@ -43,7 +43,7 @@ class Payment extends React.Component {
 
                                             <div className="inputBox">
                                                 <span>full name :</span>
-                                                <input type="text" placeholder="Sam" />
+                                                <input type="text" placeholder="Sam" /> 
                                             </div>
                                             <div className="inputBox">
                                                 <span>email :</span>
@@ -52,14 +52,14 @@ class Payment extends React.Component {
                                             <div className="inputBox">
                                                 <span>Phone Number :</span>
                                                 <input type="text" placeholder="+1-1234567890" />
-                                            </div>
+                                            </div> 
 
                                             <div >
                                                 <div><img src="/asserts/images/wallet.jpeg" alt="Cash Icon" width="320" height="120" /></div>
                                                 <div><input type="submit" value="Cash" className="submit" /> </div>
                                             </div>
 
-                                        </div>
+                                        </div> //Confirmation Page  
 
                                         <div className="col">
 
@@ -85,7 +85,7 @@ class Payment extends React.Component {
                                                 <div className="inputBox">
                                                     <span>exp year :</span>
                                                     <input type="number" placeholder="2022" />
-                                                </div>
+                                                </div> 
                                                 <div className="inputBox">
                                                     <span>CVV :</span>
                                                     <input type="text" placeholder="123" />
@@ -94,7 +94,7 @@ class Payment extends React.Component {
 
                                         </div>
 
-                                    </div>
+                                    </div> //payment confirmation
                                     
                                     <input type="submit" value="proceed to checkout" className="submit-btn" />
 
