@@ -17,26 +17,26 @@ function Cart () {
    	   	  <div className="image-box">
    	   	  	<img src="asserts/images/lf.png" alt="Cart"
             style={{ height:"120px" }} />
-   	   	  </div>
+   	   	  </div> //Displays item details
    	   	  <div className="about">
    	   	  	<h1 className="title">Apple Juice</h1>
    	   	  	<h3 className="subtitle">250ml</h3>
    	   	  	<img src="images/veg.png"  alt="Cart"
             style={{ height:"30px" }} />
    	   	  </div>
-   	   	  <div className="counter">
+   	   	  <div className="counter"> 
    	   	  	<div className="btn">+</div>
    	   	  	<div className="count">2</div>
-   	   	  	<div className="btn">-</div>
+   	   	  	<div className="btn">-</div> 
    	   	  </div>
-   	   	  <div className="prices">
+   	   	  <div className="prices"> //Displays prices
    	   	  	<div className="amount">$2.99</div>
    	   	  	<div className="save"><u>Save for later</u></div>
    	   	  	<div className="remove"><u>Remove</u></div>
    	   	  </div>
    	   </div>
 
-   	   <div className="Cart-Items pad">
+   	   <div className="Cart-Items pad"> //Displays cart items 
    	   	  <div className="image-box">
    	   	  	<img src="images/grapes.png"  alt="Cart"
             style={{ height:"120px" }} />
@@ -53,7 +53,7 @@ function Cart () {
    	   	  	<div className="btn">-</div>
    	   	  </div>
    	   	  <div className="prices">
-   	   	  	<div className="amount">$3.19</div>
+   	   	  	<div className="amount">$3.19</div> //Displays total amount
    	   	  	<div className="save"><u>Save for later</u></div>
    	   	  	<div className="remove"><u>Remove</u></div>
    	   	  </div>
