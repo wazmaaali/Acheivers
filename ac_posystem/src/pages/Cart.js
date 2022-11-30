@@ -34,7 +34,7 @@ function Cart () {
    	   	  	<div className="save"><u>Save for later</u></div>
    	   	  	<div className="remove"><u>Remove</u></div>
    	   	  </div>
-   	   </div>
+   	   </div> //Displays Total prices,items and other options
 
    	   <div className="Cart-Items pad"> //Displays cart items 
    	   	  <div className="image-box">
