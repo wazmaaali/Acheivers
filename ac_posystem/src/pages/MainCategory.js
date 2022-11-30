@@ -42,6 +42,25 @@ const MainCategory = () => {
       item.count = 1;
       addTOCart.push(item);
     }
+
+    if (a == "b1") {
+      document.getElementById("c1").innerHTML = item.count;
+    }
+    if (a == "b2") {
+      document.getElementById("c2").innerHTML = item.count;
+    }
+    if (a == "b3") {
+      document.getElementById("c3").innerHTML = item.count;
+    }
+    if (a == "b4") {
+      document.getElementById("c4").innerHTML = item.count;
+    }
+    if (a == "b5") {
+      document.getElementById("c5").innerHTML = item.count;
+    }
+    if (a == "b6") {
+      document.getElementById("c6").innerHTML = item.count;
+    }
   };
 
   let decrementCount = (e) => {
@@ -67,6 +86,25 @@ const MainCategory = () => {
       addTOCart.pop(item);
     }
     console.log("INDEX == ", addTOCart);
+
+    if (a == "b11") {
+      document.getElementById("c1").innerHTML = item.count;
+    }
+    if (a == "b12") {
+      document.getElementById("c2").innerHTML = item.count;
+    }
+    if (a == "b13") {
+      document.getElementById("c3").innerHTML = item.count;
+    }
+    if (a == "b14") {
+      document.getElementById("c4").innerHTML = item.count;
+    }
+    if (a == "b15") {
+      document.getElementById("c5").innerHTML = item.count;
+    }
+    if (a == "b16") {
+      document.getElementById("c6").innerHTML = item.count;
+    }
   };
 
   useEffect(() => {
@@ -165,7 +203,9 @@ const MainCategory = () => {
                 -
               </button>
               <div className="price">
-                <span className="present">{counter}</span>
+                <span id="c1" className="present">
+                  0
+                </span>
               </div>
               <button id="b1" onClick={incrementCount} className="btn">
                 +
@@ -191,7 +231,9 @@ const MainCategory = () => {
                 -
               </button>
               <div className="price">
-                <span className="present">{counter}</span>
+                <span id="c2" className="present">
+                  0
+                </span>
               </div>
               <button id="b2" onClick={incrementCount} className="btn">
                 +
@@ -216,7 +258,9 @@ const MainCategory = () => {
                 -
               </button>
               <div className="price">
-                <span className="present">{counter}</span>
+                <span id="c3" className="present">
+                  0
+                </span>
               </div>
               <button id="b3" onClick={incrementCount} className="btn">
                 +
@@ -241,7 +285,9 @@ const MainCategory = () => {
                 -
               </button>
               <div className="price">
-                <span className="present">{counter}</span>
+                <span id="c4" className="present">
+                  0
+                </span>
               </div>
               <button id="b4" onClick={incrementCount} className="btn">
                 +
@@ -266,7 +312,9 @@ const MainCategory = () => {
                 -
               </button>
               <div className="price">
-                <span className="present">{counter}</span>
+                <span id="c5" className="present">
+                  0
+                </span>
               </div>
               <button id="b5" onClick={incrementCount} className="btn">
                 +
@@ -296,7 +344,9 @@ const MainCategory = () => {
                 -
               </button>
               <div className="price">
-                <span className="present">{counter}</span>
+                <span id="c6" className="present">
+                  0
+                </span>
               </div>
               <button id="b6" onClick={incrementCount} className="btn">
                 +
@@ -361,7 +411,7 @@ let setTitle = (id) => {
     document.getElementById("maintitle").innerHTML = "FROZEFOOD";
   }
 };
-
+//Filter data for future
 let filterData = () => {
   const filteredSuggestions = datalist.filter((datalist) =>
     datalist.sc_name.toString().toLowerCase()
