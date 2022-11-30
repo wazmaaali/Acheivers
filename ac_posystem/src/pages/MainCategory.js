@@ -42,25 +42,7 @@ const MainCategory = () => {
       item.count = 1;
       addTOCart.push(item);
     }
-
-    if (a == "b1") {
-      document.getElementById("c1").innerHTML = item.count;
-    }
-    if (a == "b2") {
-      document.getElementById("c2").innerHTML = item.count;
-    }
-    if (a == "b3") {
-      document.getElementById("c3").innerHTML = item.count;
-    }
-    if (a == "b4") {
-      document.getElementById("c4").innerHTML = item.count;
-    }
-    if (a == "b5") {
-      document.getElementById("c5").innerHTML = item.count;
-    }
-    if (a == "b6") {
-      document.getElementById("c6").innerHTML = item.count;
-    }
+    updateCount(index, item.count);
   };
 
   let decrementCount = (e) => {
@@ -85,26 +67,7 @@ const MainCategory = () => {
       item.count = 1;
       addTOCart.pop(item);
     }
-    console.log("INDEX == ", addTOCart);
-
-    if (a == "b11") {
-      document.getElementById("c1").innerHTML = item.count;
-    }
-    if (a == "b12") {
-      document.getElementById("c2").innerHTML = item.count;
-    }
-    if (a == "b13") {
-      document.getElementById("c3").innerHTML = item.count;
-    }
-    if (a == "b14") {
-      document.getElementById("c4").innerHTML = item.count;
-    }
-    if (a == "b15") {
-      document.getElementById("c5").innerHTML = item.count;
-    }
-    if (a == "b16") {
-      document.getElementById("c6").innerHTML = item.count;
-    }
+    updateCount(index, item.count);
   };
 
   useEffect(() => {
@@ -362,29 +325,6 @@ const MainCategory = () => {
   );
 };
 
-//Add items to cart
-const handleClick = (e) => {
-  //jquery for showing popup
-  const modal = document.querySelector(".modal");
-  const closeBtn = document.querySelector(".close");
-  modal.style.display = "block";
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  const mapping = { b1: 0, b2: 1, b3: 2, b4: 3, b5: 4, b6: 5 };
-  const a = e.target.id;
-  const index = mapping[a];
-  console.log("INDEX == ", index);
-  var item = addTOCart.find((x) => x.sc_id == datalist[index].sc_id);
-  if (item) {
-    item.count = item.count + 1;
-  } else {
-    var item = JSON.parse(JSON.stringify(datalist[index])); //just to make sure its not passing reference
-    item.count = 1;
-    addTOCart.push(item);
-  }
-};
 //Fetch data added in cart and send it to backend
 let sendData = () => {
   sessionStorage.setItem("items", JSON.stringify(addTOCart));
@@ -409,6 +349,27 @@ let setTitle = (id) => {
   }
   if (id == 6) {
     document.getElementById("maintitle").innerHTML = "FROZEFOOD";
+  }
+};
+
+let updateCount = (a, val) => {
+  if (a == "0") {
+    document.getElementById("c1").innerHTML = val;
+  }
+  if (a == "1") {
+    document.getElementById("c2").innerHTML = val;
+  }
+  if (a == "2") {
+    document.getElementById("c3").innerHTML = val;
+  }
+  if (a == "3") {
+    document.getElementById("c4").innerHTML = val;
+  }
+  if (a == "4") {
+    document.getElementById("c5").innerHTML = val;
+  }
+  if (a == "5") {
+    document.getElementById("c6").innerHTML = val;
   }
 };
 //Filter data for future
