@@ -57,6 +57,7 @@ class Payment extends React.Component {
       })
       .catch((error) => console.log("Error: ", error));
   }
+  
   calculate(){ //Calculations of the cart
     for (var i of itemss){
       total+=i['count']*Number(i['sc_price'].slice(1)) // Sub Total of cart items
@@ -65,6 +66,8 @@ class Payment extends React.Component {
     console.log(total)
     window.sessionStorage.setItem("totalsum", totalsum); // SessionStorage to send TotalSum of the cart to other pages
   }
+
+
   render() {
     this.calculate()
     return ( // HTML Front End Code
@@ -78,7 +81,7 @@ class Payment extends React.Component {
                     <h3>Summary</h3>
                     <div className="summary-item">
                       <span className="text">Subtotal</span> {/* Subtotal Sum of the cart items*/}
-                      <span className="price">$232</span>
+                      <span className="price">${total}</span>
                     </div>
                     <div className="summary-item">
                       <span className="text">Discount</span> {/* Discount - Constant $10 */}
@@ -90,7 +93,7 @@ class Payment extends React.Component {
                     </div>
                     <div className="summary-item">
                       <span className="text">Total</span>
-                      <span className="price">$423</span> {/* Total Sum of cart items with Discount and Shipping*/}
+                      <span className="price">${totalsum}</span> {/* Total Sum of cart items with Discount and Shipping*/}
                     </div>
                     {/* Button to redirect back to the main page */}
                     <button
