@@ -5,47 +5,12 @@ import axios from "axios";
 var total = 0 
 var totalsum = 0
 
-var itemss = [{sc_id: 1,
-  sc_name: 'BANANNA',
-  sc_image: '',
-  sc_price: '$14',
-  c_id: 1,
-  discounted: '2',
-  no_avail: 50,
-  count: 25
-},
-{sc_id: 2,
-  sc_name: 'BERRY',
-  sc_image: '',
-  sc_price: '$8',
-  c_id: 1,
-  discounted: '2',
-  no_avail: 50,
-  count: 5
-},{sc_id: 3,
-  sc_name: 'APPLE',
-  sc_image: '',
-  sc_price: '$9',
-  c_id: 1,
-  discounted: '2',
-  no_avail: 50, 
-  count: 10
-},{sc_id: 4,
-  sc_name: 'MEAT',
-  sc_image: '',
-  sc_price: '$100',
-  c_id: 1,
-  discounted: '2',
-  no_avail: 50,
-  count: 1 
-}]
-
 class Payment extends React.Component {
   //call backend when payment button is clicked and pass the sessionStorage data to backend
   
   sendData() {
     // POST request using fetch inside useEffect React hook
-    // const itemss = JSON.parse(sessionStorage.getItem("items"));
+    const itemss = JSON.parse(sessionStorage.getItem("items"));
     itemss.forEach((item) => {
       item.sc_image = "";
     });
