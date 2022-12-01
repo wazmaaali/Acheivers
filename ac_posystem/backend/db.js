@@ -11,7 +11,7 @@ app.use(express.json());
 let pool = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "root1234",
+  password: "password",
   database: "achievers_schema",
 });
 //get categories from mySQL database
@@ -20,6 +20,7 @@ app.get("/categories", (req, res) => {
   pool.query(q, (err, data) => {
     if (err) {
       console.log("Error: ", err);
+
       return res.json(err);
     } else {
       // console.log("Data: ", data);
