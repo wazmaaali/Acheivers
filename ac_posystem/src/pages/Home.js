@@ -14,7 +14,6 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import React from "react";
-import Menu from "./menu";
 
 const Home = () => {
   const [home, setCategories] = useState([]);
@@ -46,7 +45,6 @@ const Home = () => {
           <h1 className="logoTitle">Achievers Grocery</h1>
         </a>
 
-        <Menu></Menu>
         <form action="" className="searchForm">
           <input
             type="search"
