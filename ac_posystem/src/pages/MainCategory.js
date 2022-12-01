@@ -10,6 +10,7 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 var cat = "";
+var storageArr = [];
 var datalist = [];
 var addTOCart = [];
 
@@ -23,21 +24,25 @@ const MainCategory = () => {
   let incrementCount = (e) => {
     setCount(counter + 1);
     //jquery for showing popup
-    const modal = document.querySelector(".modal");
-    const closeBtn = document.querySelector(".close");
-    modal.style.display = "block";
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
+    // const modal = document.querySelector(".modal");
+    // const closeBtn = document.querySelector(".close");
+    // modal.style.display = "block";
+    // closeBtn.addEventListener("click", () => {
+    //   modal.style.display = "none";
+    // });
 
     const mapping = { b1: 0, b2: 1, b3: 2, b4: 3, b5: 4, b6: 5 };
     const a = e.target.id;
     const index = mapping[a];
-    console.log("INDEX == ", index);
+    console.log("INDEX == ", index,datalist[index]);
     var item = addTOCart.find((x) => x.sc_id == datalist[index].sc_id);
     if (item) {
+      console.log("item",item)
       item.count = item.count + 1;
     } else {
+      
+      storageArr.push(datalist[index])
+      localStorage.setItem("cartList1",JSON.stringify(storageArr))
       var item = JSON.parse(JSON.stringify(datalist[index])); //just to make sure its not passing reference
       item.count = 1;
       addTOCart.push(item);
@@ -153,12 +158,7 @@ const MainCategory = () => {
               <span id="p1" className="present"></span>
               <span className="previous">$15.3</span>
             </div>
-            <div class="modal">
-              <div class="modal_content">
-                <span class="close">&times;</span>
-                <p>Item Added!!!</p>
-              </div>
-            </div>
+          
 
             <div style={{ display: "flex", fontSize: "40px" }}>
               <button id="b11" onClick={decrementCount} className="btn">
