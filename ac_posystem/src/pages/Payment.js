@@ -2,6 +2,44 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+var total = 0 
+var totalsum = 0
+
+var itemss = [{sc_id: 1,
+  sc_name: 'BANANNA',
+  sc_image: '',
+  sc_price: '$14',
+  c_id: 1,
+  discounted: '2',
+  no_avail: 50,
+  count: 25
+},
+{sc_id: 2,
+  sc_name: 'BERRY',
+  sc_image: '',
+  sc_price: '$8',
+  c_id: 1,
+  discounted: '2',
+  no_avail: 50,
+  count: 5
+},{sc_id: 3,
+  sc_name: 'APPLE',
+  sc_image: '',
+  sc_price: '$9',
+  c_id: 1,
+  discounted: '2',
+  no_avail: 50, 
+  count: 10
+},{sc_id: 4,
+  sc_name: 'MEAT',
+  sc_image: '',
+  sc_price: '$100',
+  c_id: 1,
+  discounted: '2',
+  no_avail: 50,
+  count: 1 
+}]
+
 class Payment extends React.Component {
   //call backend when payment button is clicked and pass the sessionStorage data to backend
   
@@ -19,7 +57,14 @@ class Payment extends React.Component {
       })
       .catch((error) => console.log("Error: ", error));
   }
-  
+  calculate(){ //Calculations of the cart
+    for (var i of itemss){
+      total+=i['count']*Number(i['sc_price'].slice(1)) // Sub Total of cart items
+    }
+    totalsum = total + 10 + 5 // Total Sum of cart with discount (10) and shipping (5)
+    console.log(total)
+    window.sessionStorage.setItem("totalsum", totalsum); // SessionStorage to send TotalSum of the cart to other pages
+  }
   render() {
     this.calculate()
     return ( // HTML Front End Code
