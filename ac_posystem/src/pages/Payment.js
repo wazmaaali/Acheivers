@@ -4,13 +4,13 @@ import axios from "axios";
 
 var total = 0 
 var totalsum = 0
-
+var itemss = []
 class Payment extends React.Component {
   //call backend when payment button is clicked and pass the sessionStorage data to backend
   
   sendData() {
     // POST request using fetch inside useEffect React hook
-    const itemss = JSON.parse(sessionStorage.getItem("items"));
+    itemss = JSON.parse(sessionStorage.getItem("items"));
     itemss.forEach((item) => {
       item.sc_image = "";
     });
@@ -25,7 +25,7 @@ class Payment extends React.Component {
   
   calculate(){ //Calculations of the cart
     for (var i of itemss){
-      total+=i['count']*Number(i['sc_price'].slice(1)) // Sub Total of cart items
+      total+=i['count']*Number(i['sc_price']) // Sub Total of cart items
     }
     totalsum = total + 10 + 5 // Total Sum of cart with discount (10) and shipping (5)
     console.log(total)
