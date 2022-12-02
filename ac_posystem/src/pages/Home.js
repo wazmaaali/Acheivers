@@ -34,6 +34,7 @@ const Home = () => {
         document.getElementById("img4").src = res.data[3].c_img;
         document.getElementById("img5").src = res.data[4].c_img;
         document.getElementById("img6").src = res.data[5].c_img;
+        sessionStorage.setItem("flg", JSON.stringify(false));
       } catch (err) {
         console.log("99999 Error: ", err);
       }

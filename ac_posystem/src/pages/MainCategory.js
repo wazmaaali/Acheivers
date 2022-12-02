@@ -21,14 +21,18 @@ var cat = "";
 var datalist = [];
 var addTOCart = [];
 var catt = "";
+var flg = false;
 const MainCategory = () => {
   const location = useLocation();
   //Getting an item From home page
   cat = location.state.id;
   catt = JSON.parse(sessionStorage.getItem("cat"));
 
-  if (cat != catt) {
-    cat = catt;
+  flg = JSON.parse(sessionStorage.getItem("flg"));
+  if (flg) {
+    if (cat != catt) {
+      cat = catt;
+    }
   }
 
   //Function on add click
@@ -41,19 +45,22 @@ const MainCategory = () => {
       modal.style.display = "none";
     });
 
+    //map the ids coming on click from each button
     const mapping = { b1: 0, b2: 1, b3: 2, b4: 3, b5: 4, b6: 5 };
     const a = e.target.id;
     const index = mapping[a];
     if (datalist != null) {
-      //modifying the code
+      //Check if sc_id exists with the paticular index
       var item = addTOCart.find((x) => x.sc_id == datalist[index].sc_id);
       if (item) {
         item.count = item.count + 1;
       } else {
+        //get the values from datalist array and parse it into json string
         var item = JSON.parse(JSON.stringify(datalist[index]));
         item.count = 1;
         addTOCart.push(item);
       }
+      //Update tehe counter
       updateCount(index, item.count);
     }
   };
@@ -350,6 +357,7 @@ const MainCategory = () => {
 };
 
 let refreshPage = (e) => {
+  sessionStorage.setItem("flg", JSON.stringify(true));
   var val = e.target.value;
   if (val == "Vegetables") {
     sessionStorage.setItem("cat", JSON.stringify("1"));
