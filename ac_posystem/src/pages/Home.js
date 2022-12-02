@@ -2,6 +2,13 @@ import "../assets/css/fontawesome.min.css";
 import "../assets/css/default.css";
 import "../assets/css/style.css";
 import "../assets/css/responsive.css";
+import image1 from "../assets/images/category-1.png";
+import image2 from "../assets/images/category-2.png";
+import image3 from "../assets/images/category-3.png";
+import image4 from "../assets/images/category-4.png";
+import image5 from "../assets/images/sauces.png";
+import image6 from "../assets/images/sweets.png";
+import image7 from "../assets/images/frozenfood.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
@@ -14,22 +21,14 @@ const Home = () => {
         //fetch the data for categories from backend
         const res = await axios.get("http://localhost:8803/categories");
 
-        //parse the data to front end
         document.getElementById("h1").innerHTML = res.data[0].c_name;
         document.getElementById("h2").innerHTML = res.data[1].c_name;
         document.getElementById("h3").innerHTML = res.data[2].c_name;
         document.getElementById("h4").innerHTML = res.data[3].c_name;
         document.getElementById("h5").innerHTML = res.data[4].c_name;
         document.getElementById("h6").innerHTML = res.data[5].c_name;
-
-        document.getElementById("img1").src = res.data[0].c_img;
-        document.getElementById("img2").src = res.data[1].c_img;
-        document.getElementById("img3").src = res.data[2].c_img;
-        document.getElementById("img4").src = res.data[3].c_img;
-        document.getElementById("img5").src = res.data[4].c_img;
-        document.getElementById("img6").src = res.data[5].c_img;
       } catch (err) {
-        console.log("Error: ", err);
+        console.log("99999 Error: ", err);
       }
     };
     fetchCategories();
@@ -37,6 +36,7 @@ const Home = () => {
 
   const newLocal = "iconLink";
   return (
+    // <div dangerouslySetInnerHTML={ {__html: htmlContent} } />
     <div className="App">
       <section className="header">
         <a className="logo">
@@ -44,13 +44,24 @@ const Home = () => {
           <h1 className="logoTitle">Achievers Grocery</h1>
         </a>
 
+        <form action="" className="searchForm">
+          <input
+            type="search"
+            name="search"
+            id="search"
+            className="searchBox"
+            placeholder="Search here..."
+          />
+          <label htmlFor="search" className="searchPointer">
+            <i className="fas fa-search icon"></i>
+          </label>
+        </form>
         <div className="mobileMenuHandler">
           <i className="fas fa-bars icon"></i>
         </div>
       </section>
       <section className="navbar" id="navbar">
         <div className="iconContainer">
-
           <a className={newLocal} title="Shopping Cart">
             <Link to="/Cart">
             <i className="fa fas fa-shopping-cart icon"></i>
@@ -71,7 +82,7 @@ const Home = () => {
                   <h4 className="subTitle">Upto 27.5% off</h4>
                 </div>
                 <figure className="figure">
-                  <img id="img1" alt="banner" className="img" />
+                  <img src={image1} alt="banner" className="img" />
                 </figure>
 
                 <Link
@@ -90,7 +101,7 @@ const Home = () => {
                   <h4 className="subTitle">Upto 50% off</h4>
                 </div>
                 <figure className="figure">
-                  <img id="img2" alt="banner" className="img" />
+                  <img src={image4} alt="banner" className="img" />
                 </figure>
                 <Link
                   to="/MainCategory"
@@ -108,7 +119,7 @@ const Home = () => {
                   <h4 className="subTitle">Upto 35% off</h4>
                 </div>
                 <figure className="figure">
-                  <img id="img3" alt="banner" className="img" />
+                  <img src={image3} alt="banner" className="img" />
                 </figure>
                 <Link
                   to="/MainCategory"
@@ -128,7 +139,7 @@ const Home = () => {
                   <h4 className="subTitle">Upto 27.5% off</h4>
                 </div>
                 <figure className="figure">
-                  <img id="img4" alt="banner" className="img" />
+                  <img src={image2} alt="banner" className="img" />
                 </figure>
 
                 <Link
@@ -147,7 +158,7 @@ const Home = () => {
                   <h4 className="subTitle">Upto 50% off</h4>
                 </div>
                 <figure className="figure">
-                  <img id="img5" alt="banner" className="img" />
+                  <img src={image5} alt="banner" className="img" />
                 </figure>
                 <Link
                   to="/MainCategory"
@@ -165,7 +176,7 @@ const Home = () => {
                   <h4 className="subTitle">Upto 35% off</h4>
                 </div>
                 <figure className="figure">
-                  <img id="img6" alt="banner" className="img" />
+                  <img src={image7} alt="banner" className="img" />
                 </figure>
                 <Link
                   to="/MainCategory"
@@ -201,6 +212,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+
       
 
 

@@ -17,7 +17,8 @@ function ConfiromationPage() {
         }} //Styling the container 
       >
       </div>
-      <h3 style={{ textAlign: "center" }}>Please visit Again :-)</h3> //Display Message
+      <h3 style={{ textAlign: "center" }}>Please visit Again :-)</h3>
+
     </div>
   );
 }

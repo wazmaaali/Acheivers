@@ -122,6 +122,7 @@ class Payment extends React.Component {
                             value="Cash"
                             className="submit"
                           />{" "}
+
                         </div>
                       </div>
                     </div>
@@ -179,6 +180,7 @@ class Payment extends React.Component {
       </div>
     );
   }
+
 }
 
 export default Payment;
