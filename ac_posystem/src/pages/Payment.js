@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 var total = 0;
@@ -27,11 +26,8 @@ class Payment extends React.Component {
     itemss = JSON.parse(sessionStorage.getItem("items"));
     itemss.forEach((item) => {
       total = total + item.count * Number(item.sc_price); // Sub Total of cart items
-      console.log("999: ", total);
     });
-
     totalsum = total - 10 + 5; // Total Sum of cart with discount (10) and shipping (5)
-    console.log(total);
     window.sessionStorage.setItem("totalsum", totalsum); // SessionStorage to send TotalSum of the cart to other pages
   }
 

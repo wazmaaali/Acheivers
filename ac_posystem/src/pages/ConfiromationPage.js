@@ -1,7 +1,6 @@
 import React from "react";
 
 function ConfiromationPage() {
-  var total = window.sessionStorage.getItem("totalsum") // Adding Section Storage to get the cart sum data"
   return (
     <div className="App">
       <h1 style={{ textAlign: "center", fontFamily: "Times New Roman" }}>

@@ -27,3 +27,21 @@ test("if service instance is created", () => {
 test("if service instance is created", () => {
   expect(subCatvalue().length).toEqual(6);
 });
+
+// test("GET /categories", async () => {
+//   const res = await request(app).get("/categories");
+//   expect(res.statusCode).toBe(200);
+//   expect(res.body.length).toBeGreaterThan(0);
+// });
+
+// test("GET /", async () => {
+//   const res = await request(app).get("/");
+//   expect(res.statusCode).toBe(200);
+//   expect(res.body.length).toBeGreaterThan(0);
+// });
+
+// test("GET /sub_categories/:id", async () => {
+//   const res = await request(app).get("/sub_categories/1");
+//   expect(res.statusCode).toBe(200);
+//   expect(res.body.length).toBeGreaterThan(0);
+// });

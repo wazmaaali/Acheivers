@@ -2,13 +2,6 @@ import "../assets/css/fontawesome.min.css";
 import "../assets/css/default.css";
 import "../assets/css/style.css";
 import "../assets/css/responsive.css";
-import image1 from "../assets/images/category-1.png";
-import image2 from "../assets/images/category-2.png";
-import image3 from "../assets/images/category-3.png";
-import image4 from "../assets/images/category-4.png";
-import image5 from "../assets/images/sauces.png";
-import image6 from "../assets/images/sweets.png";
-import image7 from "../assets/images/frozenfood.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
@@ -41,7 +34,6 @@ const Home = () => {
     fetchCategories();
   }, []);
 
-  const newLocal = "iconLink";
   return (
     <div className="App">
       <section className="header">
