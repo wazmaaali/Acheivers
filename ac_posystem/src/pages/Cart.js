@@ -46,7 +46,7 @@ function Cart() {
         )
       );
     } else {
-      // If it is new product, the the count is 1 and array is updated
+      // If it is new product, then the count is 1 and array is updated
       setCartItems([...cartItems, { ...product, count: 1 }]);
     }
   };
