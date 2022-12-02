@@ -4,19 +4,18 @@ import "../assets/css/default.css";
 import "../assets/css/style.css";
 import "../assets/css/responsive.css";
 import { Link } from "react-router-dom";
-import data from "./data";
-import { useLocation } from "react-router-dom";
 
 function Cart() {
-
   // Declaring variables
-  const location = useLocation();
   var products;
-  const [cartItems, setCartItems] = useState(products);
   const shippingPrice = 10;
 
   // Retrieving data from session storage, if data is null, then assign empty array else assign to variable (used terinary operator)
-  sessionStorage.getItem("items") == null ? (products = []) : (products = JSON.parse(sessionStorage.getItem("items")));
+  sessionStorage.getItem("items") == null
+    ? (products = [])
+    : (products = JSON.parse(sessionStorage.getItem("items")));
+  const [cartItems, setCartItems] = useState(products);
+
   const itemsPrice = cartItems.reduce((a, c) => a + c.c_id * c.sc_price, 0);
 
   // Calculating total price
@@ -24,13 +23,11 @@ function Cart() {
 
   // Function declaration when + is clicked
   const onAdd = (product) => {
-
     // Checking whether we have clicked product in the cartItems array
     const exist = cartItems.find((x) => x.sc_id === product.sc_id);
     if (exist) {
       var check = cartItems.map((x) => x.sc_id === product.sc_id);
       if (check) {
-
         // Find particular index and updating the count for that particular product id
         var index = products.findIndex((x) => x.sc_id === product.sc_id);
         products[index].count = products[index].count + 1;
@@ -53,7 +50,6 @@ function Cart() {
 
   // Function declaration when - button is clicked
   const onRemove = (product) => {
-
     // Checking whether we have clicked product in the cartItems array
     const exist = cartItems.find((x) => x.sc_id === product.sc_id);
 
@@ -61,7 +57,6 @@ function Cart() {
     if (exist.count === 1) {
       var check = cartItems.map((x) => x.sc_id === product.sc_id);
       if (check) {
-
         // Find particular index and updating the count for that particular product id
         var index = products.findIndex((x) => x.sc_id === product.sc_id);
 
@@ -77,7 +72,6 @@ function Cart() {
     } else {
       var check = cartItems.map((x) => x.sc_id === product.sc_id);
       if (check) {
-
         // Find particular index and updating the count for that particular product id
         var index = products.findIndex((x) => x.sc_id === product.sc_id);
 
@@ -105,10 +99,8 @@ function Cart() {
           justifyContent: "center",
           textAlign: "center",
         }}
-      >
-      </div>
+      ></div>
       <div className="cart-container">
-
         <div className="center">
           <h2>Cart Items</h2>
           <div>
@@ -165,7 +157,6 @@ function Cart() {
 
                 <hr />
                 <div className="">
-
                   <Link to="/Payment">
                     <button className="btn-checkout">Checkout</button>
                   </Link>
