@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function Cart() {
   // Declaring variables
   var products;
-  const shippingPrice = 10;
+  const shippingPrice = 5;
 
   // Retrieving data from session storage, if data is null, then assign empty array else assign to variable (used terinary operator)
   sessionStorage.getItem("items") == null
@@ -16,7 +16,7 @@ function Cart() {
     : (products = JSON.parse(sessionStorage.getItem("items")));
   const [cartItems, setCartItems] = useState(products);
 
-  const itemsPrice = cartItems.reduce((a, c) => a + c.c_id * c.sc_price, 0);
+  const itemsPrice = cartItems.reduce((a, c) => a + c.count * c.sc_price, 0);
 
   // Calculating total price
   const totalPrice = itemsPrice + shippingPrice;
