@@ -1,5 +1,4 @@
 import React from "react";
-import React, { useState } from "react";
 import "../assets/css/fontawesome.min.css";
 import "../assets/css/default.css";
 import "../assets/css/style.css";
@@ -83,10 +82,6 @@ function Cart() {
         <Link to="/Payment" className="btn">
           Checkout
         </Link>
-
-
-
- 
       </div>
     </div>
   );
