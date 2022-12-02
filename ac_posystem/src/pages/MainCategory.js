@@ -10,6 +10,7 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 var cat = "";
+var storageArr = [];
 var datalist = [];
 var addTOCart = [];
 
@@ -20,6 +21,7 @@ const MainCategory = () => {
 
   //Function on add click
   let incrementCount = (e) => {
+
     const mapping = { b1: 0, b2: 1, b3: 2, b4: 3, b5: 4, b6: 5 };
     const a = e.target.id;
     const index = mapping[a];
@@ -28,6 +30,7 @@ const MainCategory = () => {
       var item = addTOCart.find((x) => x.sc_id == datalist[index].sc_id);
       if (item) {
         item.count = item.count + 1;
+
       } else {
         var item = JSON.parse(JSON.stringify(datalist[index]));
         item.count = 1;
@@ -130,12 +133,7 @@ const MainCategory = () => {
                 $1
               </span>
             </div>
-            <div class="modal">
-              <div class="modal_content">
-                <span class="close">&times;</span>
-                <p>Item Added!!!</p>
-              </div>
-            </div>
+          
 
             <div style={{ display: "flex", fontSize: "40px" }}>
               <button id="b11" onClick={decrementCount} className="btn">
