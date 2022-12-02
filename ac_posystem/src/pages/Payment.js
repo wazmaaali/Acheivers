@@ -54,6 +54,7 @@ class Payment extends React.Component {
                     </div>
                     <div className="summary-item">
                       <span className="text">Shipping</span> {/* Shipping - Constant $5 */}
+
                       <span className="price">$5</span>
                     </div>
                     <div className="summary-item">
@@ -111,7 +112,6 @@ class Payment extends React.Component {
                         </div>
                       </div>
                     </div>
-
                     <div className="col"> {/* Card Details Section */}
                       <h3 className="title">payment</h3>
 
@@ -124,6 +124,7 @@ class Payment extends React.Component {
                         <input type="text" placeholder="Mr. Sam" />
                       </div>
                       <div className="inputBox">
+
                         <span>credit card number :</span> {/* Card Number */}
                         <input
                           type="number"
@@ -131,6 +132,7 @@ class Payment extends React.Component {
                         />
                       </div>
                       <div className="inputBox">
+
                         <span>exp month :</span> {/* Exp Month */}
                         <input type="text" placeholder="january" />
                       </div>

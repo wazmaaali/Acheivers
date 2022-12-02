@@ -16,7 +16,6 @@ function ConfiromationPage() {
           backgroundImage: "linear-gradient(to right,#98ff98,#9ea8f5,#7cbcdc)",
         }}
       >
-        The Total amount in the bill is: {total} {/* Total Cart Sum */}
       </div>
       <h3 style={{ textAlign: "center" }}>Please visit Again :-)</h3>
     </div>

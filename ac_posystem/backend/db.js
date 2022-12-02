@@ -23,9 +23,6 @@ app.get("/categories", (req, res) => {
 
       return res.json(err);
     } else {
-      // console.log("Data: ", data);
-      // const obj = Object.entries(data);
-      // obj.forEach(([key, value]) => console.log(key, value));
       return res.json(data);
     }
   });
