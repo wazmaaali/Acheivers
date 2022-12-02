@@ -19,6 +19,13 @@ jobs:
       - run:
           name: run test cases
           command: npm run test
+      - run:
+          name: install backend dependencies
+          command: cd backend && npm install
+      - run:
+          name: run backend test cases
+          command: npm run test
+
 
 workflows:
   sample:
