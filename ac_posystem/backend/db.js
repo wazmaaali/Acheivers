@@ -22,9 +22,6 @@ app.get("/categories", (req, res) => {
       console.log("Error: ", err);
       return res.json(err);
     } else {
-      // console.log("Data: ", data);
-      // const obj = Object.entries(data);
-      // obj.forEach(([key, value]) => console.log(key, value));
       return res.json(data);
     }
   });
@@ -51,11 +48,4 @@ app.get("/", (req, res) => {
 //check the connection
 app.listen(8803, () => {
   console.log("Connect to backed");
-});
-
-//DATA coming from payment page get it here and send it to database to update the inventory
-//fetch daata from front end
-app.post("/updateInventory", function (req, res) {
-  var countValue = req.body;
-  console.log("99999 CountValue is", countValue);
 });

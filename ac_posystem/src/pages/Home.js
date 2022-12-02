@@ -4,18 +4,17 @@ import "../assets/css/style.css";
 import "../assets/css/responsive.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
 import { useEffect } from "react";
 import React from "react";
 
 const Home = () => {
-  const [home, setCategories] = useState([]);
   useEffect(() => {
     const fetchCategories = async () => {
       try {
+        //fetch the data for categories from backend
         const res = await axios.get("http://localhost:8803/categories");
-        setCategories(res.data);
 
+        //parse the data to front end
         document.getElementById("h1").innerHTML = res.data[0].c_name;
         document.getElementById("h2").innerHTML = res.data[1].c_name;
         document.getElementById("h3").innerHTML = res.data[2].c_name;
@@ -50,7 +49,6 @@ const Home = () => {
       </section>
 
       <div className="Categories">
-        {/* {home.map((home) => ( */}
         <div className="Category">
           <section id="category" className="category">
             <h2 className="sectionTitle">
@@ -69,7 +67,7 @@ const Home = () => {
                 <Link
                   to="/MainCategory"
                   state={{
-                    id: "1",
+                    id: "1", //passing the id to sub category in order to run a query for subcategories
                   }}
                   className="btn"
                 >
@@ -105,7 +103,7 @@ const Home = () => {
                 <Link
                   to="/MainCategory"
                   state={{
-                    id: "3", // your data array of objects
+                    id: "3",
                   }}
                   className="btn"
                 >
@@ -126,7 +124,7 @@ const Home = () => {
                 <Link
                   to="/MainCategory"
                   state={{
-                    id: "4", // your data array of objects
+                    id: "4",
                   }}
                   className="btn"
                 >
@@ -144,7 +142,7 @@ const Home = () => {
                 <Link
                   to="/MainCategory"
                   state={{
-                    id: "5", // your data array of objects
+                    id: "5",
                   }}
                   className="btn"
                 >
@@ -162,7 +160,7 @@ const Home = () => {
                 <Link
                   to="/MainCategory"
                   state={{
-                    id: "6", // your data array of objects
+                    id: "6",
                   }}
                   className="btn"
                 >
