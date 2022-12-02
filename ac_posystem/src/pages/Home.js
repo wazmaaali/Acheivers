@@ -180,7 +180,7 @@ const Home = () => {
             </div>
           </section>
         </div>
-      </div>
+      </div> //Creating a container for the dialouge component
       <div class="modal fade" id="shoppingcart" role="dialog" aria-labelledby="shoppingcartLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -193,10 +193,11 @@ const Home = () => {
             <div class="modal-body">
             ...
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer"> //Exit options
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button>
             </div>
+                 //End of the page
           </div>
         </div>
       </div>
