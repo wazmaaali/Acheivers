@@ -27,6 +27,13 @@ const Home = () => {
         document.getElementById("h4").innerHTML = res.data[3].c_name;
         document.getElementById("h5").innerHTML = res.data[4].c_name;
         document.getElementById("h6").innerHTML = res.data[5].c_name;
+
+        document.getElementById("img1").src = res.data[0].c_img;
+        document.getElementById("img2").src = res.data[1].c_img;
+        document.getElementById("img3").src = res.data[2].c_img;
+        document.getElementById("img4").src = res.data[3].c_img;
+        document.getElementById("img5").src = res.data[4].c_img;
+        document.getElementById("img6").src = res.data[5].c_img;
       } catch (err) {
         console.log("99999 Error: ", err);
       }
@@ -36,7 +43,6 @@ const Home = () => {
 
   const newLocal = "iconLink";
   return (
-    // <div dangerouslySetInnerHTML={ {__html: htmlContent} } />
     <div className="App">
       <section className="header">
         <a className="logo">
@@ -44,31 +50,11 @@ const Home = () => {
           <h1 className="logoTitle">Achievers Grocery</h1>
         </a>
 
-        <form action="" className="searchForm">
-          <input
-            type="search"
-            name="search"
-            id="search"
-            className="searchBox"
-            placeholder="Search here..."
-          />
-          <label htmlFor="search" className="searchPointer">
-            <i className="fas fa-search icon"></i>
-          </label>
-        </form>
         <div className="mobileMenuHandler">
           <i className="fas fa-bars icon"></i>
         </div>
       </section>
-      <section className="navbar" id="navbar">
-        <div className="iconContainer">
-          <a className={newLocal} title="Shopping Cart">
-            <Link to="/Cart">
-            <i className="fa fas fa-shopping-cart icon"></i>
-            </Link>            
-          </a>
-        </div>
-      </section>
+
       <div className="Categories">
         <div className="Category">
           <section id="category" className="category">
@@ -82,13 +68,13 @@ const Home = () => {
                   <h4 className="subTitle">Upto 27.5% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image1} alt="banner" className="img" />
+                  <img id="img1" alt="banner" className="img" />
                 </figure>
 
                 <Link
                   to="/MainCategory"
                   state={{
-                    id: "1", //passing the id to sub category in order to run a query for subcategories
+                    id: "1", //pass the id
                   }}
                   className="btn"
                 >
@@ -101,12 +87,12 @@ const Home = () => {
                   <h4 className="subTitle">Upto 50% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image4} alt="banner" className="img" />
+                  <img id="img2" alt="banner" className="img" />
                 </figure>
                 <Link
                   to="/MainCategory"
                   state={{
-                    id: "2", // your data array of objects
+                    id: "2", //pass the id
                   }}
                   className="btn"
                 >
@@ -119,12 +105,12 @@ const Home = () => {
                   <h4 className="subTitle">Upto 35% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image3} alt="banner" className="img" />
+                  <img id="img3" alt="banner" className="img" />
                 </figure>
                 <Link
                   to="/MainCategory"
                   state={{
-                    id: "3",
+                    id: "3", //pass the id
                   }}
                   className="btn"
                 >
@@ -139,13 +125,13 @@ const Home = () => {
                   <h4 className="subTitle">Upto 27.5% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image2} alt="banner" className="img" />
+                  <img id="img4" alt="banner" className="img" />
                 </figure>
 
                 <Link
                   to="/MainCategory"
                   state={{
-                    id: "4",
+                    id: "4", // pass the id
                   }}
                   className="btn"
                 >
@@ -158,12 +144,12 @@ const Home = () => {
                   <h4 className="subTitle">Upto 50% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image5} alt="banner" className="img" />
+                  <img id="img5" alt="banner" className="img" />
                 </figure>
                 <Link
                   to="/MainCategory"
                   state={{
-                    id: "5",
+                    id: "5", // pass the id
                   }}
                   className="btn"
                 >
@@ -176,12 +162,12 @@ const Home = () => {
                   <h4 className="subTitle">Upto 35% off</h4>
                 </div>
                 <figure className="figure">
-                  <img src={image7} alt="banner" className="img" />
+                  <img id="img6" alt="banner" className="img" />
                 </figure>
                 <Link
                   to="/MainCategory"
                   state={{
-                    id: "6",
+                    id: "6", // pass the id
                   }}
                   className="btn"
                 >
@@ -191,33 +177,8 @@ const Home = () => {
             </div>
           </section>
         </div>
-      </div> //Creating a container for the dialouge component
-      <div class="modal fade" id="shoppingcart" role="dialog" aria-labelledby="shoppingcartLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="shoppingcartLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-            ...
-            </div>
-            <div class="modal-footer"> //Exit options
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-                 //End of the page
-          </div>
-        </div>
       </div>
-
-      
-
-
     </div>
   );
 };
-
 export default Home;

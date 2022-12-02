@@ -15,11 +15,9 @@ import image9 from "../assets/images/product-9.png";
 import axios from "axios";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-
 import { Link } from "react-router-dom";
 
 var cat = "";
-var storageArr = [];
 var datalist = [];
 var addTOCart = [];
 const MainCategory = () => {
@@ -32,9 +30,15 @@ const MainCategory = () => {
     cat = catt;
   }
 
-
   //Function on add click
   let incrementCount = (e) => {
+    //jquery for showing popup
+    const modal = document.querySelector(".modal");
+    const closeBtn = document.querySelector(".close");
+    modal.style.display = "block";
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
 
     const mapping = { b1: 0, b2: 1, b3: 2, b4: 3, b5: 4, b6: 5 };
     const a = e.target.id;
@@ -44,7 +48,6 @@ const MainCategory = () => {
       var item = addTOCart.find((x) => x.sc_id == datalist[index].sc_id);
       if (item) {
         item.count = item.count + 1;
-
       } else {
         var item = JSON.parse(JSON.stringify(datalist[index]));
         item.count = 1;
@@ -53,7 +56,27 @@ const MainCategory = () => {
       updateCount(index, item.count);
     }
   };
-  let decrementCount = (e) => {};
+  let decrementCount = (e) => {
+    const mapping = { b11: 0, b12: 1, b13: 2, b14: 3, b15: 4, b16: 5 };
+    const a = e.target.id;
+    const index = mapping[a];
+    console.log("INDEX == ", index);
+    if (datalist != null) {
+      var item = addTOCart.find((x) => x.sc_id == datalist[index].sc_id);
+      if (item) {
+        if (item.count == 0) {
+          item.count = 0;
+        } else {
+          item.count = item.count - 1;
+        }
+      } else {
+        var item = JSON.parse(JSON.stringify(datalist[index])); //just to make sure its not passing reference
+        item.count = 1;
+        addTOCart.pop(item);
+      }
+      updateCount(index, item.count);
+    }
+  };
 
   useEffect(() => {
     const fetchSubCategories = async () => {
@@ -69,7 +92,7 @@ const MainCategory = () => {
         document.getElementById("h3").innerHTML = res.data[2].sc_name;
         document.getElementById("h4").innerHTML = res.data[3].sc_name;
         document.getElementById("h5").innerHTML = res.data[4].sc_name;
-        // document.getElementById("h6").innerHTML = res.data[5].sc_name;
+        document.getElementById("h6").innerHTML = res.data[5].sc_name;
 
         document.getElementById("p1").innerHTML = res.data[0].sc_price;
         document.getElementById("p2").innerHTML = res.data[1].sc_price;
@@ -77,13 +100,6 @@ const MainCategory = () => {
         document.getElementById("p4").innerHTML = res.data[3].sc_price;
         document.getElementById("p5").innerHTML = res.data[4].sc_price;
         document.getElementById("p6").innerHTML = res.data[5].sc_price;
-
-        document.getElementById("d1").innerHTML = "$" + res.data[0].discounted;
-        document.getElementById("d2").innerHTML = "$" + res.data[1].discounted;
-        document.getElementById("d3").innerHTML = "$" + res.data[2].discounted;
-        document.getElementById("d4").innerHTML = "$" + res.data[3].discounted;
-        document.getElementById("d5").innerHTML = "$" + res.data[4].discounted;
-        document.getElementById("d6").innerHTML = "$" + res.data[5].discounted;
 
         document.getElementById("img1").src = res.data[0].sc_image;
         document.getElementById("img2").src = res.data[1].sc_image;
@@ -104,7 +120,7 @@ const MainCategory = () => {
   return (
     <div>
       <section className="header">
-      <select onChange={refreshPage}>
+        <select onChange={refreshPage}>
           <option value="Select">Select Category</option>
           <option value="Vegetables">Vegetables</option>
           <option value="Fruits">Fruits</option>
@@ -117,13 +133,19 @@ const MainCategory = () => {
           <i className="fas fa-shopping-bag icon"></i>
           <h1 className="logoTitle">Achievers Grocery</h1>
         </a>
+        <div class="modal">
+          <div class="modal_content">
+            <span class="close">&times;</span>
+            <p>Item Added!!!</p>
+          </div>
+        </div>
         <form action={filterData} className="searchForm">
           <input
             type="search"
             name="search"
             id="search"
             className="searchBox"
-            placeholder="Search here..."
+            placeholder="Search by Name..."
           />
           <label htmlFor="search" className="searchPointer">
             <i className="fas fa-search icon"></i>
@@ -133,42 +155,36 @@ const MainCategory = () => {
           <i className="fas fa-bars icon"></i>
         </div>
       </section>
-      <section className="navbar" id="navbar">
 
+      <section className="navbar" id="navbar">
         <div className="iconContainer">
-          <Link
-            to="/Cart"
-            state={{
-              value: addTOCart,
-            }}
-          >
+          <Link to="/Cart" onClick={sendData}>
             <a className="iconLink" title="Shopping Cart">
               <i className="fa fas fa-shopping-cart icon"></i>
             </a>
           </Link>
-       
-          <Link to="/Cart" className="iconLink" >
-            <i className="fa fas fa-shopping-cart icon"></i>
-            </Link> 
         </div>
       </section>
+
       <section id="product" className="product">
-        <h2 className="sectionTitle"> Vegetables</h2>
+        <h2 id="maintitle" className="sectionTitle"></h2>
         <div className="container">
           <div className="box">
-            <h3 className="discount">-17.5%</h3>
             <figure className="figure">
-              <img src={image4} alt="banner" className="img" />
+              <img id="img1" alt="banner" className="img" />
             </figure>
             <h2 id="h1" className="title"></h2>
 
             <div className="price">
               <span id="p1" className="present"></span>
-              <span id="d1" className="previous">
-                $1
-              </span>
+              <span className="previous">$15.3</span>
             </div>
-          
+            <div class="modal">
+              <div class="modal_content">
+                <span class="close">&times;</span>
+                <p>Item Added!!!</p>
+              </div>
+            </div>
 
             <div style={{ display: "flex", fontSize: "40px" }}>
               <button id="b11" onClick={decrementCount} className="btn">
@@ -183,19 +199,20 @@ const MainCategory = () => {
                 +
               </button>
             </div>
+
+            {/* <button id="b1" type="button" className="btn" onClick={handleClick}>
+              Add to Cart
+            </button> */}
           </div>
 
           <div className="box">
-            <h3 className="discount">-17.5%</h3>
             <figure className="figure">
-              <img src={image1} alt="banner" className="img" />
+              <img id="img2" alt="banner" className="img" />
             </figure>
             <h2 id="h2" className="title"></h2>
             <div className="price">
               <span id="p2" className="present"></span>
-              <span id="d2" className="previous">
-                $1
-              </span>
+              <span className="previous">$15.3</span>
             </div>
             <div style={{ display: "flex", fontSize: "40px" }}>
               <button id="b12" onClick={decrementCount} className="btn">
@@ -210,19 +227,19 @@ const MainCategory = () => {
                 +
               </button>
             </div>
+            {/* <button id="b2" type="button" className="btn" onClick={handleClick}>
+              Add To Cart
+            </button> */}
           </div>
 
           <div className="box">
-            <h3 className="discount">-18.5%</h3>
             <figure className="figure">
-              <img src={image2} alt="banner" className="img" />
+              <img id="img3" alt="banner" className="img" />
             </figure>
             <h2 id="h3" className="title"></h2>
             <div className="price">
               <span id="p3" className="present"></span>
-              <span id="d3" className="previous">
-                $1
-              </span>
+              <span className="previous">$15.3</span>
             </div>
             <div style={{ display: "flex", fontSize: "40px" }}>
               <button id="b13" onClick={decrementCount} className="btn">
@@ -237,19 +254,19 @@ const MainCategory = () => {
                 +
               </button>
             </div>
+            {/* <button id="b3" type="button" className="btn" onClick={handleClick}>
+              Add To Cart
+            </button> */}
           </div>
 
           <div className="box">
-            <h3 className="discount">-13.5%</h3>
             <figure className="figure">
-              <img src={image3} alt="banner" className="img" />
+              <img id="img4" alt="banner" className="img" />
             </figure>
-            <h2 className="title">Apple</h2>
+            <h2 id="h4" className="title"></h2>
             <div className="price">
               <span id="p4" className="present"></span>
-              <span id="d4" className="previous">
-                $1
-              </span>
+              <span className="previous">$15.3</span>
             </div>
             <div style={{ display: "flex", fontSize: "40px" }}>
               <button id="b14" onClick={decrementCount} className="btn">
@@ -264,19 +281,19 @@ const MainCategory = () => {
                 +
               </button>
             </div>
+            {/* <button id="b4" type="button" className="btn" onClick={handleClick}>
+              Add To Cart
+            </button> */}
           </div>
 
           <div className="box">
-            <h3 className="discount">-10.5%</h3>
             <figure className="figure">
-              <img src={image4} alt="banner" className="img" />
+              <img id="img5" alt="banner" className="img" />
             </figure>
-            <h2 id="h4" className="title"></h2>
+            <h2 id="h5" className="title"></h2>
             <div className="price">
               <span id="p5" className="present"></span>
-              <span id="d5" className="previous">
-                $1
-              </span>
+              <span className="previous">$15.3</span>
             </div>
             <div style={{ display: "flex", fontSize: "40px" }}>
               <button id="b15" onClick={decrementCount} className="btn">
@@ -291,19 +308,19 @@ const MainCategory = () => {
                 +
               </button>
             </div>
+            {/* <button id="b5" type="button" className="btn" onClick={handleClick}>
+              Add To Cart
+            </button> */}
           </div>
 
           <div className="box">
-            <h3 className="discount">-30.5%</h3>
             <figure className="figure">
-              <img src={image5} alt="banner" className="img" />
+              <img id="img6" alt="banner" className="img" />
             </figure>
-            <h2 id="h5" className="title"></h2>
+            <h2 id="h6" className="title"></h2>
             <div className="price">
               <span id="p6" className="present"></span>
-              <span id="d6" className="previous">
-                $1
-              </span>
+              <span className="previous">$15.3</span>
             </div>
             <div style={{ display: "flex", fontSize: "40px" }}>
               <button
@@ -323,12 +340,16 @@ const MainCategory = () => {
                 +
               </button>
             </div>
+            {/* <button id="b6" type="button" className="btn" onClick={handleClick}> */}
+            {/* Add To Cart */}
+            {/* </button> */}
           </div>
         </div>
       </section>
     </div>
   );
 };
+
 let refreshPage = (e) => {
   var val = e.target.value;
   if (val == "Vegetables") {
@@ -362,38 +383,32 @@ let refreshPage = (e) => {
     console.log("999, cat: ", cat);
   }
 };
-const handleClick = (e) => {
-  console.log(e.target.id, "999 : ", datalist[1]);
-  const a = e.target.id;
-  if (a == "b1") {
-    addTOCart.push(datalist[0]);
 
 //Fetch data added in cart and send it to backend
 let sendData = () => {
   sessionStorage.setItem("items", JSON.stringify(addTOCart));
 };
 
-//Set Main title of Main Category page on the basis of c_id coming from category page
-//this can be modified once we have dynamic frontend
-
+//Set Main title of Main Category page on the basis of c_id coming from
+//category page, this needs to be dynamic in future
 let setTitle = (id) => {
   if (id == 1) {
     document.getElementById("maintitle").innerHTML = "VEGETABLES";
   }
-  if (a == "b2") {
-    addTOCart.push(datalist[1]);
+  if (id == 2) {
+    document.getElementById("maintitle").innerHTML = "FRUITS";
   }
-  if (a == "b3") {
-    addTOCart.push(datalist[2]);
+  if (id == 3) {
+    document.getElementById("maintitle").innerHTML = "MEAT";
   }
-  if (a == "b4") {
-    addTOCart.push(datalist[3]);
+  if (id == 4) {
+    document.getElementById("maintitle").innerHTML = "DAIRY";
   }
-  if (a == "b5") {
-    addTOCart.push(datalist[4]);
+  if (id == 5) {
+    document.getElementById("maintitle").innerHTML = "SWEETS";
   }
-  if (a == "b6") {
-    addTOCart.push(datalist[5]);
+  if (id == 6) {
+    document.getElementById("maintitle").innerHTML = "FROZEFOOD";
   }
 };
 //update the counter for adding or removing item
@@ -425,5 +440,4 @@ let filterData = () => {
   );
   return filteredSuggestions;
 };
-
 export default MainCategory;
