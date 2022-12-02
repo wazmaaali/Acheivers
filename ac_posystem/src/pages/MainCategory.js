@@ -107,19 +107,12 @@ const MainCategory = () => {
         </div>
       </section>
       <section className="navbar" id="navbar">
-
         <div className="iconContainer">
           <Link to="/Cart" onClick={sendData}>
             <a className="iconLink" title="Shopping Cart">
               <i className="fa fas fa-shopping-cart icon"></i>
             </a>
           </Link>
-
-        <div className="iconContainer">        
-          <Link to="/Cart" className="iconLink" >
-            <i className="fa fas fa-shopping-cart icon"></i>
-            </Link> 
-
         </div>
       </section>
       <section id="product" className="product">
