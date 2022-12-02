@@ -42,4 +42,6 @@ test("GET /", async () => {
 
 test("GET /sub_categories/:id", async () => {
   const res = await request(app).get("/sub_categories/1");
+  expect(res.statusCode).toBe(200);
+  expect(res.body.length).toBeGreaterThan(0);
 });
