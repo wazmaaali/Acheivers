@@ -5,59 +5,93 @@ import "../assets/css/style.css";
 import "../assets/css/responsive.css";
 import { Link } from "react-router-dom";
 import data from "./data";
+import { useLocation } from "react-router-dom";
 
 function Cart() {
 
-  var storageArr = [];
+  // Declaring variables
+  const location = useLocation();
   var products;
-  //console.log("JSON.parse(localStorage.getItem(",JSON.parse(localStorage.getItem("cartList1")))
-  //const itemss = JSON.parse(sessionStorage.getItem("items"));
-  //console.log("itemss",itemss)
-  //const products = JSON.parse(localStorage.getItem("cartList1"));
-  localStorage.getItem("cartList1") == null ? products = [] : products = JSON.parse(localStorage.getItem("cartList1"))
-
   const [cartItems, setCartItems] = useState(products);
-  const itemsPrice = cartItems.reduce((a, c) => a + c.c_id * c.sc_price, 0);
   const shippingPrice = 10;
+
+  // Retrieving data from session storage, if data is null, then assign empty array else assign to variable (used terinary operator)
+  sessionStorage.getItem("items") == null ? (products = []) : (products = JSON.parse(sessionStorage.getItem("items")));
+  const itemsPrice = cartItems.reduce((a, c) => a + c.c_id * c.sc_price, 0);
+
+  // Calculating total price
   const totalPrice = itemsPrice + shippingPrice;
 
+  // Function declaration when + is clicked
   const onAdd = (product) => {
+
+    // Checking whether we have clicked product in the cartItems array
     const exist = cartItems.find((x) => x.sc_id === product.sc_id);
     if (exist) {
-      var check = cartItems.map((x)=>x.sc_id === product.sc_id)
-      if(check) {
-        var index = products.findIndex((x) => x.sc_id === product.sc_id)
-        products[index].c_id = products[index].c_id + 1
-        localStorage.setItem("cartList1",JSON.stringify(products))
+      var check = cartItems.map((x) => x.sc_id === product.sc_id);
+      if (check) {
+
+        // Find particular index and updating the count for that particular product id
+        var index = products.findIndex((x) => x.sc_id === product.sc_id);
+        products[index].count = products[index].count + 1;
+
+        // Updating the array value and add it to session storage
+        sessionStorage.setItem("items", JSON.stringify(products));
       }
-      setCartItems(cartItems.map((x) => x.sc_id === product.sc_id ? { ...exist, c_id: exist.c_id + 1 } : x));
+
+      // Updating the setCartItems values so that UI changes are displayed
+      setCartItems(
+        cartItems.map((x) =>
+          x.sc_id === product.sc_id ? { ...exist, count: exist.count + 1 } : x
+        )
+      );
     } else {
-      setCartItems([...cartItems, { ...product, c_id: 1 }]);
+      // If it is new product, the the count is 1 and array is updated
+      setCartItems([...cartItems, { ...product, count: 1 }]);
     }
   };
 
+  // Function declaration when - button is clicked
   const onRemove = (product) => {
+
+    // Checking whether we have clicked product in the cartItems array
     const exist = cartItems.find((x) => x.sc_id === product.sc_id);
-    if (exist.c_id === 1) {
-      var check = cartItems.map((x)=>x.sc_id === product.sc_id)
-      if(check) {
-        var index = products.findIndex((x) => x.sc_id === product.sc_id)
-        console.log("index",index,products)
-        products.splice(index,1)
-        console.log("products12",products)
-        localStorage.setItem("cartList1",JSON.stringify(products))
+
+    // If the product count is 1 initially, and then removes the product from cart, then it gets removed from UI
+    if (exist.count === 1) {
+      var check = cartItems.map((x) => x.sc_id === product.sc_id);
+      if (check) {
+
+        // Find particular index and updating the count for that particular product id
+        var index = products.findIndex((x) => x.sc_id === product.sc_id);
+
+        // Remove the product from array list
+        products.splice(index, 1);
+
+        // Updating the array value and add it to session storage
+        sessionStorage.setItem("items", JSON.stringify(products));
       }
+
+      // Updating the setCartItems values so that UI changes are displayed
       setCartItems(cartItems.filter((x) => x.sc_id !== product.sc_id));
     } else {
-      var check = cartItems.map((x)=>x.sc_id === product.sc_id)
-      if(check) {
-        var index = products.findIndex((x) => x.sc_id === product.sc_id)
-        products[index].c_id = products[index].c_id - 1
-        localStorage.setItem("cartList1",JSON.stringify(products))
+      var check = cartItems.map((x) => x.sc_id === product.sc_id);
+      if (check) {
+
+        // Find particular index and updating the count for that particular product id
+        var index = products.findIndex((x) => x.sc_id === product.sc_id);
+
+        // Decrement product count from array for particular product
+        products[index].count = products[index].count - 1;
+
+        // Update new array values to session storage
+        sessionStorage.setItem("items", JSON.stringify(products));
       }
+
+      // Updating the setCartItems values so that UI changes are displayed
       setCartItems(
         cartItems.map((x) =>
-          x.sc_id === product.sc_id ? { ...exist, c_id: exist.c_id - 1 } : x
+          x.sc_id === product.sc_id ? { ...exist, count: exist.count - 1 } : x
         )
       );
     }
@@ -65,26 +99,15 @@ function Cart() {
 
   return (
     <div className="cart-parent">
-      <div style={{ display: "flex", justifyContent: "center", textAlign: "center" }}>
-       
-        {/* <h1>All Products</h1>
-        <h1></h1> */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          textAlign: "center",
+        }}
+      >
       </div>
       <div className="cart-container">
-        {/* <div className="left">
-          <div className="product-items-container">
-            {products.map((product) => (
-              <div className="product-item">
-                <img src={product.sc_image} alt={product.sc_name} />
-                <h3>{product.sc_name}</h3>
-                <div>${product.sc_price}</div>
-                <div>
-                  <button onClick={() => onAdd(product)}>Add To Cart</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> */}
 
         <div className="center">
           <h2>Cart Items</h2>
@@ -108,7 +131,7 @@ function Cart() {
                     -
                   </button>{" "}
                   <div style={{ paddingLeft: 20, paddingRight: 20 }}>
-                    {item.c_id} x ${item.sc_price}
+                    {item.count} x ${item.sc_price}
                   </div>
                   <button onClick={() => onAdd(item)} className="add">
                     +
@@ -141,8 +164,11 @@ function Cart() {
                 </div>
 
                 <hr />
-                <div className="  ">
-                  <button className="btn-checkout">Checkout</button>
+                <div className="">
+
+                  <Link to="/Payment">
+                    <button className="btn-checkout">Checkout</button>
+                  </Link>
                 </div>
               </>
             )}
