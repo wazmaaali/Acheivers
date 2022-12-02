@@ -1,6 +1,7 @@
 import React from "react";
 
 function ConfiromationPage() {
+  var total = window.sessionStorage.getItem("totalsum") // Adding Section Storage to get the cart sum data"
   return (
     <div className="App">
       <h1 style={{ textAlign: "center", fontFamily: "Times New Roman" }}>
@@ -15,7 +16,6 @@ function ConfiromationPage() {
           backgroundImage: "linear-gradient(to right,#98ff98,#9ea8f5,#7cbcdc)",
         }}
       >
-        The Total amount in the bill is: '$355'
       </div>
       <h3 style={{ textAlign: "center" }}>Please visit Again :-)</h3>
     </div>

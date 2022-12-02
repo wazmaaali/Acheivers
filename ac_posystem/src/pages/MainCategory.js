@@ -6,6 +6,7 @@ import "../assets/css/responsive.css";
 import axios from "axios";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+
 import { Link } from "react-router-dom";
 
 var cat = "";
@@ -105,17 +106,22 @@ const MainCategory = () => {
           <i className="fas fa-bars icon"></i>
         </div>
       </section>
-
       <section className="navbar" id="navbar">
+
         <div className="iconContainer">
           <Link to="/Cart" onClick={sendData}>
             <a className="iconLink" title="Shopping Cart">
               <i className="fa fas fa-shopping-cart icon"></i>
             </a>
           </Link>
+
+        <div className="iconContainer">        
+          <Link to="/Cart" className="iconLink" >
+            <i className="fa fas fa-shopping-cart icon"></i>
+            </Link> 
+
         </div>
       </section>
-
       <section id="product" className="product">
         <h2 id="maintitle" className="sectionTitle"></h2>
         <div className="container">

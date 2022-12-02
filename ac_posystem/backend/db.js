@@ -11,7 +11,7 @@ app.use(express.json());
 let pool = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "root1234",
+  password: "password",
   database: "achievers_schema",
 });
 //get categories from mySQL database
@@ -20,6 +20,7 @@ app.get("/categories", (req, res) => {
   pool.query(q, (err, data) => {
     if (err) {
       console.log("Error: ", err);
+
       return res.json(err);
     } else {
       return res.json(data);
@@ -48,4 +49,25 @@ app.get("/", (req, res) => {
 //check the connection
 app.listen(8803, () => {
   console.log("Connect to backed");
+});
+
+//DATA coming from payment page get it here and send it to database to update the inventory
+//fetch daata from front end
+app.post("/updateInventory", function (req, res) {
+  var countValue = req.body;
+  for(var i of countValue){
+    let no_avail = i['no_avail']-i['count']
+    let query = 'update sub_categories set no_avail = '+ no_avail+' where sc_id = '+i['sc_id']+ ' and c_id = '+i['c_id']
+    console.log(query)
+    pool.query(query, (err, data) => {
+      if (err) {
+        console.log("Error: ", err);
+        return res.json(err);
+      } else {
+        return res.json(data);
+      }
+    });
+
+  }
+  console.log("99999 CountValue is", countValue);
 });
