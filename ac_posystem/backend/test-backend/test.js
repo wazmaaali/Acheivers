@@ -33,3 +33,7 @@ test("GET /categories", async () => {
   expect(res.statusCode).toBe(200);
   expect(res.body.length).toBeGreaterThan(0);
 });
+
+test("GET /", async () => {
+  const res = await request(app).get("/");
+});
