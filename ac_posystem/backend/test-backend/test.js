@@ -50,14 +50,10 @@ describe("Cart total", ()=>{
 
   test("Checking cart", ()=>{
       const cart = [
-          { cart: "Apple", price: 500 },
-          { cart: "Mango", price: 50 },
-          { cart: "Melon", price: 60 },
-          { cart: "Berry", price: 30 },
-          { cart: "Jack", price: 200 },
+          { cart: "Apple", price: 40 },{ cart: "Mango", price: 50 },
       ]
       // Calculations.getSum(cart);
-      expect(Calculations.getSum(cart)).toEqual(840);
+      expect(Calculations.getSum(cart)).toEqual(90);
   })
 })
 
@@ -65,13 +61,9 @@ describe("Cart total", ()=>{
 
     test("Checking check", ()=>{
         const cart = [
-            { cart: "Apple", price: 500 },
-            { cart: "Mango", price: 50 },
-            { cart: "Melon", price: 60 },
-            { cart: "Berry", price: 30 },
-            { cart: "Jack", price: 200 },
+            { cart: "Apple", price: 500 },{ cart: "Mango", price: 50 },
         ]
-        expect(cart.length).toEqual(0);
+        expect(cart.length).toEqual(2);
     })
 })
 
